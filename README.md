@@ -1,6 +1,6 @@
 # git https shim
 
-This git shim replaces any URL or SSH "relative URL" with an HTTPS URL.
+This git shim replaces any URL or SSH "relative URL" as an argument to git with an HTTPS URL.
 
 This is useful in a corporate environment where an HTTP Proxy is used. You could use the command `git config --global url."https://".insteadOf git://` but that doesn't work for SSH style commands: `git@github.com:org/repo.git`.
 
