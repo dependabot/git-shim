@@ -8,6 +8,16 @@ How does it work? You place this git shim on your path before the actual git. Wh
 
 ## Installation
 
+### Prebuilt
+
+- Go to the latest [Release](https://github.com/jakecoffman/git/releases)
+- Download the binary for your device
+- Unarchive and place the binary somewhere accessable like `~/bin`
+- Edit your PATH environment variable to place `~/bin` before where `git` is installed, like `PATH=$HOME/bin:/usr/bin`.
+- Restart your terminal
+
+### From Source
+
 With Go installed, ensure Go's bin path is on the $PATH environment variable before `git` and run:
 
 ```
