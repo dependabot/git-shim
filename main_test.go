@@ -16,11 +16,11 @@ func TestScrub(t *testing.T) {
 		},
 		{
 			input:    "git@github.com:jakecoffman/git-https-shim",
-			expected: "https://github.com/jakecoffman/git-https-shim",
+			expected: "https://git@github.com/jakecoffman/git-https-shim",
 		},
 		{
 			input:    "ssh://git@github.com/jakecoffman/git-https-shim",
-			expected: "https://github.com/jakecoffman/git-https-shim",
+			expected: "https://git@github.com/jakecoffman/git-https-shim",
 		},
 		{
 			input:    "ssh://github.com/jakecoffman/git-https-shim",

@@ -5,6 +5,7 @@ import (
 	"net/url"
 	"os"
 	"os/exec"
+	"regexp"
 	"strings"
 )
 
@@ -65,15 +66,15 @@ func findGit(envPath string) string {
 	return ""
 }
 
+var sshUrl = regexp.MustCompile(`^(?P<user>.*?)@(?P<host>.*?):(?:(?P<port>.*?)/)?(?P<path>.*?/.*?)$`)
+
 func Scrub(argument string) string {
 	u, err := url.Parse(argument)
 	if err == nil && u.Scheme != "" {
 		u.Scheme = "https"
-		u.User = nil
 		return u.String()
 	}
-	if strings.HasPrefix(argument, "git@") && strings.Contains(argument, ":") {
-		argument = strings.TrimPrefix(argument, "git@")
+	if sshUrl.MatchString(argument) {
 		return "https://" + strings.Replace(argument, ":", "/", 1)
 	}
 	return argument
