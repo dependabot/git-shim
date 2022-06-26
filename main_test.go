@@ -40,3 +40,16 @@ func TestScrub(t *testing.T) {
 		})
 	}
 }
+
+func TestFindGit(t *testing.T) {
+	t.Run("finds the second git", func(t *testing.T) {
+		if v := findGit("test/bin1:test/bin2:test/bin3"); v != "test/bin2/git" {
+			t.Errorf(v)
+		}
+	})
+	t.Run("finds nothing", func(t *testing.T) {
+		if v := findGit("test/bin1"); v != "" {
+			t.Errorf(v)
+		}
+	})
+}
