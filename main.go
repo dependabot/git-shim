@@ -11,7 +11,7 @@ import (
 
 func main() {
 	// find the next git after the first one found
-	os.Args[0] = findGit(os.Getenv("PATH"))
+	os.Args[0] = FindGit(os.Getenv("PATH"))
 	if os.Args[0] == "" {
 		fmt.Fprintln(os.Stderr, "Failed to find git in the path")
 		os.Exit(1)
@@ -39,7 +39,7 @@ func main() {
 	}
 }
 
-func findGit(envPath string) string {
+func FindGit(envPath string) string {
 	paths := strings.Split(envPath, string(os.PathListSeparator))
 	var shimPath string
 
@@ -66,16 +66,26 @@ func findGit(envPath string) string {
 	return ""
 }
 
-var sshUrl = regexp.MustCompile(`^(?P<user>.*?)@(?P<host>.*?):(?:(?P<port>.*?)/)?(?P<path>.*?/.*?)$`)
+var scpUrl = regexp.MustCompile(`^(?P<user>\S+?)@(?P<host>[a-zA-Z\d-]+(\.[a-zA-Z\d-]+)+\.?):(?P<path>.*?/.*?)$`)
 
 func Scrub(argument string) string {
-	u, err := url.Parse(argument)
+	u, err := url.ParseRequestURI(argument)
 	if err == nil && u.Scheme != "" {
 		u.Scheme = "https"
 		return u.String()
 	}
-	if sshUrl.MatchString(argument) {
-		return "https://" + strings.Replace(argument, ":", "/", 1)
+	if scpUrl.MatchString(argument) {
+		newUrl := "https://" + strings.Replace(argument, ":", "/", 1)
+		u, err = url.ParseRequestURI(newUrl)
+		if err != nil {
+			// new URI isn't valid
+			return argument
+		}
+		if u.Host != scpUrl.FindStringSubmatch(argument)[2] {
+			// host changed, possible attack
+			return argument
+		}
+		return newUrl
 	}
 	return argument
 }
