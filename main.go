@@ -18,18 +18,15 @@ func main() {
 		return
 	}
 
-	// Change any ssh or git url arguments to https
-	for i, arg := range os.Args {
-		os.Args[i] = Scrub(arg)
+	if IsRewriteAllowed(os.Args[1:]) {
+		// Change any ssh or git url arguments to https
+		for i, arg := range os.Args[1:] {
+			os.Args[i] = Scrub(arg)
+		}
 	}
 
 	// Run the scrubbed git command
-	var cmd *exec.Cmd
-	if len(os.Args) == 1 {
-		cmd = exec.Command(os.Args[0])
-	} else {
-		cmd = exec.Command(os.Args[0], os.Args[1:]...)
-	}
+	cmd := exec.Command(os.Args[0], os.Args[1:]...)
 	cmd.Stderr = os.Stderr
 	cmd.Stdout = os.Stdout
 	err := cmd.Run()
@@ -39,6 +36,26 @@ func main() {
 	}
 }
 
+var allowedCommands = []string{"clone", "fetch"}
+
+// IsRewriteAllowed returns true if it is safe to rewrite arguments. Some commands
+// such as config would break if rewritten, like when using insteadOf.
+func IsRewriteAllowed(args []string) bool {
+	for _, arg := range args {
+		if strings.HasPrefix(arg, "-") {
+			continue
+		}
+		for _, allowed := range allowedCommands {
+			if arg == allowed {
+				return true
+			}
+		}
+		return false
+	}
+	return false
+}
+
+// FindGit finds the second git executable on the path, the first being this one.
 func FindGit(envPath string) string {
 	paths := strings.Split(envPath, string(os.PathListSeparator))
 	var shimPath string
@@ -68,6 +85,7 @@ func FindGit(envPath string) string {
 
 var scpUrl = regexp.MustCompile(`^(?P<user>\S+?)@(?P<host>[a-zA-Z\d-]+(\.[a-zA-Z\d-]+)+\.?):(?P<path>.*?/.*?)$`)
 
+// Scrub rewrites arguments that look like URLs to have the HTTPS protocol.
 func Scrub(argument string) string {
 	u, err := url.ParseRequestURI(argument)
 	if err == nil && u.Scheme != "" {

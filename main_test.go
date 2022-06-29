@@ -6,6 +6,38 @@ import (
 	"testing"
 )
 
+func TestIsRewriteAllowed(t *testing.T) {
+	var cases = []struct {
+		input    []string
+		expected bool
+	}{
+		{
+			input:    []string{"clone", "git@github.com:org/repo"},
+			expected: true,
+		},
+		{
+			input:    []string{"fetch", ""},
+			expected: true,
+		},
+		{
+			input:    []string{"--work-tree=/work", "clone"},
+			expected: true,
+		},
+		{
+			input:    []string{"config", "--global", "url.\"https://github.com/\".insteadOf", "git@github.com:"},
+			expected: false,
+		},
+	}
+
+	for _, test := range cases {
+		t.Run(fmt.Sprintln(test.input), func(t *testing.T) {
+			if v := IsRewriteAllowed(test.input); v != test.expected {
+				t.Errorf("Input: %v\tExpected: %v\tGot: %v\n", test.input, test.expected, v)
+			}
+		})
+	}
+}
+
 func TestScrub(t *testing.T) {
 	var cases = []struct {
 		input    string
