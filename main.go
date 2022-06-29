@@ -21,7 +21,7 @@ func main() {
 	if IsRewriteAllowed(os.Args[1:]) {
 		// Change any ssh or git url arguments to https
 		for i, arg := range os.Args[1:] {
-			os.Args[i] = Scrub(arg)
+			os.Args[i+1] = Scrub(arg)
 		}
 	}
 
