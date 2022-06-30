@@ -1,3 +1,3 @@
-module github.com/jakecoffman/git
+module github.com/dependabot/git
 
 go 1.18

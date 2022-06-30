@@ -44,20 +44,20 @@ func TestScrub(t *testing.T) {
 		expected string
 	}{
 		{
-			input:    "git://github.com/jakecoffman/git-https-shim",
-			expected: "https://github.com/jakecoffman/git-https-shim",
+			input:    "git://github.com/dependabot/git-https-shim",
+			expected: "https://github.com/dependabot/git-https-shim",
 		},
 		{
-			input:    "git@github.com:jakecoffman/git-https-shim",
-			expected: "https://git@github.com/jakecoffman/git-https-shim",
+			input:    "git@github.com:dependabot/git-https-shim",
+			expected: "https://git@github.com/dependabot/git-https-shim",
 		},
 		{
-			input:    "ssh://git@github.com/jakecoffman/git-https-shim",
-			expected: "https://git@github.com/jakecoffman/git-https-shim",
+			input:    "ssh://git@github.com/dependabot/git-https-shim",
+			expected: "https://git@github.com/dependabot/git-https-shim",
 		},
 		{
-			input:    "ssh://github.com/jakecoffman/git-https-shim",
-			expected: "https://github.com/jakecoffman/git-https-shim",
+			input:    "ssh://github.com/dependabot/git-https-shim",
+			expected: "https://github.com/dependabot/git-https-shim",
 		},
 		{
 			input:    "HEAD~1",
