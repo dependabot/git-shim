@@ -66,18 +66,18 @@ func FindGit(envPath string) string {
 	var shimPath string
 
 	for _, path := range paths {
-		entry, err := os.ReadDir(path)
+		dirEntry, err := os.ReadDir(path)
 		if err != nil {
 			continue
 		}
-		for _, item := range entry {
-			if item.IsDir() {
+		for _, dirOrFile := range dirEntry {
+			if dirOrFile.IsDir() {
 				continue
 			}
-			if item.Name() == "git" {
+			if dirOrFile.Name() == "git" {
 				if shimPath == "" {
 					shimPath = path
-					continue
+					break
 				}
 				if shimPath != path {
 					return strings.Join([]string{path, "git"}, string(os.PathSeparator))
