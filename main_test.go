@@ -60,6 +60,10 @@ func TestScrub(t *testing.T) {
 			expected: "https://github.com/dependabot/git-https-shim",
 		},
 		{
+			input:    "file://github.com/dependabot/git-https-shim",
+			expected: "file://github.com/dependabot/git-https-shim",
+		},
+		{
 			input:    "HEAD~1",
 			expected: "HEAD~1",
 		},

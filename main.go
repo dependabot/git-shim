@@ -89,11 +89,12 @@ func FindGit(envPath string) string {
 }
 
 var scpUrl = regexp.MustCompile(`^(?P<user>\S+?)@(?P<host>[a-zA-Z\d-]+(\.[a-zA-Z\d-]+)+\.?):(?P<path>.*?/.*?)$`)
+var allowedSchemes = []string{"git", "ssh"}
 
 // Scrub rewrites arguments that look like URLs to have the HTTPS protocol.
 func Scrub(argument string) string {
 	u, err := url.ParseRequestURI(argument)
-	if err == nil && u.Scheme != "" {
+	if err == nil && u.Host != "" && contains(allowedSchemes, u.Scheme) {
 		u.Scheme = "https"
 		return u.String()
 	}
@@ -111,4 +112,13 @@ func Scrub(argument string) string {
 		return newUrl
 	}
 	return argument
+}
+
+func contains(haystack []string, needle string) bool {
+	for _, hay := range haystack {
+		if hay == needle {
+			return true
+		}
+	}
+	return false
 }
