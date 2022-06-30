@@ -33,6 +33,11 @@ func main() {
 	switch v := err.(type) {
 	case *exec.ExitError:
 		os.Exit(v.ExitCode())
+	case nil:
+		os.Exit(0)
+	default:
+		fmt.Fprintln(os.Stderr, err.Error())
+		os.Exit(2)
 	}
 }
 
