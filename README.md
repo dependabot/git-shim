@@ -21,7 +21,7 @@ How does it work? You place this git shim on your path before the actual git. Wh
 With Go installed, ensure Go's bin path is on the $PATH environment variable before `git` and run:
 
 ```
-go install github.com/dependabot/git
+go install github.com/dependabot/git@latest
 ```
 
 You may need to restart your terminal, or `source` on your .*rc/profile.
