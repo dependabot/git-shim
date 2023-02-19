@@ -1,7 +1,118 @@
+run::\BEGIN::\Start_Menu::\Presses::\reun::\runs::\Script::\:Build::\, "build_script":,''
+'run::\runs :- name: Cache
+  uses: actions/cache@v3.2.1
+  with:
+    # A list of files, directories, and wildcard patterns to cache and restore
+    path: 
+    # An explicit key for restoring and saving the cache
+    key: 
+    # An ordered list of keys to use for restoring stale cache if no cache hit occurred for key. Note `cache-hit` returns false in this case.
+    restore-keys: # optional
+    # The chunk size used to split up large files during upload, in bytes
+    upload-chunk-size: # optional
+Introduction
+1. Getting Started
+1.1. Installation
+1.2. First Steps with Cargo
+2. Cargo Guide
+2.1. Why Cargo Exists
+2.2. Creating a New Package
+2.3. Working on an Existing Package
+2.4. Dependencies
+2.5. Package Layout
+2.6. Cargo.toml vs Cargo.lock
+2.7. Tests
+2.8. Continuous Integration
+2.9. Cargo Home
+2.10. Build Cache
+3. Cargo Reference
+3.1. Specifying Dependencies
+3.1.1. Overriding Dependencies
+3.2. The Manifest Format
+3.2.1. Cargo Targets
+3.3. Workspaces
+3.4. Features
+3.4.1. Features Examples
+3.5. Profiles
+3.6. Configuration
+3.7. Environment Variables
+3.8. Build Scripts
+3.8.1. Build Script Examples
+3.9. Publishing on crates.io
+3.10. Package ID Specifications
+3.11. Source Replacement
+3.12. External Tools
+3.13. Registries
+3.14. Dependency Resolution
+3.15. SemVer Compatibility
+3.16. Future incompat report
+3.17. Reporting build timings
+3.18. Unstable Features
+4. Cargo Commands
+4.1. General Commands
+4.1.1. cargo
+4.1.2. cargo help
+4.1.3. cargo version
+4.2. Build Commands
+4.2.1. cargo bench
+4.2.2. cargo build
+4.2.3. cargo check
+4.2.4. cargo clean
+4.2.5. cargo doc
+4.2.6. cargo fetch
+4.2.7. cargo fix
+4.2.8. cargo run
+4.2.9. cargo rustc
+4.2.10. cargo rustdoc
+4.2.11. cargo test
+4.2.12. cargo report
+4.3. Manifest Commands
+4.3.1. cargo add
+4.3.2. cargo generate-lockfile
+4.3.3. cargo locate-project
+4.3.4. cargo metadata
+4.3.5. cargo pkgid
+4.3.6. cargo remove
+4.3.7. cargo tree
+4.3.8. cargo update
+4.3.9. cargo vendor
+4.3.10. cargo verify-project
+4.4. Package Commands
+4.4.1. cargo init
+4.4.2. cargo install
+4.4.3. cargo new
+4.4.4. cargo search
+4.4.5. cargo uninstall
+4.5. Publishing Commands
+4.5.1. cargo Gemfile-lock.yml :
+4.5.2. cargo owner.yarnlock
+4.5.3. cargo package.yarn-lock
+4.5.4. cargo publish.yarnlockl
+4.5.5. cargo yank.yarn-plockl
+5. FAQ
+6. Appendix: Glossary
+7. Appendix: Git Authentication
+Install
+Install Rust and Cargo
+The easiest way to get Cargo is to install the current stable release of Rust by using rustup. Installing Rust using rustup will also install cargo.
+On Linux and macOS systems, this is done as follows:
+
+curl https://sh.rustup.rs -sSf | sh
+It will download a script, and start the installation. If everything goes well, you’ll see this appear:
+
+Rust is installed now. Great!
+On Windows, download and run rustup-init.exe. It will start the installation in a console and present the above message on success.
+
+After this, you can use the rustup command to also install beta or nightly channels for Rust and Cargo.
+
+For other installation options and information, visit the install page of the Rust website.
+
+Build and Install Cargo from Source
+Alternatively, you can build Cargo from source.
+
 on:
   release:
     types: [created]
-
 jobs:
   releases-matrix:
     name: Release Go Binary
@@ -17,9 +128,1354 @@ jobs:
           - goarch: arm64
             goos: windows
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/chinktawtgawdwayway@v3
       - uses: wangyoucao577/go-release-action@v1.35
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           goos: ${{ matrix.goos }}
           goarch: ${{ matrix.goarch }}
+Zoho.com
+DataPrepCRMCreatorBooksDeskAll Products
+Search for product overviews, FAQs, and more...
+zachry wood
+My AccountSIGN OUT
+ZOHOAnalytics
+zachry wood
+My AccountSIGN OUT
+Platform
+Features
+Solutions
+Pricing
+Success Stories
+Resources
+Analytics logoAnalytics
+Platform
+Features
+Solutions
+Pricing
+Success Stories
+Resources
+What are you looking for?
+Overview
+Getting Started with Zoho Analytics
+What's New
+Workspace
+What is a Table?
+Import/Connect to Data
+From Files
+From Feeds
+From Cloud Storage
+From Cloud Databases
+Amazon RDS
+MySQL
+SQL Server
+Oracle
+PostgreSQL
+Maria DB
+Amazon Aurora MySQL
+Amazon Aurora PostgreSQL
+Amazon Redshift
+Amazon Athena
+Microsoft Azure
+Google BigQuery
+Google Cloud SQL
+Snowflake
+Oracle Cloud
+IBM Cloud
+Heroku PostgreSQL
+Panoply
+Singlestore
+MongoDB Atlas
+Other Cloud Databases
+From Local Databases
+From Zoho Apps
+From Business Apps
+Enter Data Right Away
+From Zoho Analytics Workspace
+Using Zoho Analytics API
+Business Apps Analytics
+Data Modelling and Preparation
+Creating Reports
+Dashboards
+Analyze Data
+Ask Zia
+Managing Users
+Sharing and Publishing
+Data StoryTelling
+Mobile Apps
+Zoho Analytics API
+Embedded Analytics and White Label Solutions
+Blogs and Solutions
+Contact Us
+HomeImport/Connect to DataFrom Cloud DatabasesAmazon RDSMySQL
+Import data from Amazon RDS MySQL
+If you have your data stored in Amazon RDS MySQL Cloud Database, then you can easily import your data into Zoho Analytics for reporting & analysis. Zoho Analytics allows you to either import the data into Zoho Analytics or connect directly with the Amazon RDS MySQL server.
+
+Data Import: Data in Amazon RDS MySQL will be imported and stored in Zoho Analytics. You can setup periodic schedules to fetch the latest data automatically from your Amazon RDS MySQL database. Report loading time will be faster as the data is stored in Zoho Analytics.
+Live Connect: In this mode, data will not be fetched from Amazon RDS MySQL and stored in Zoho Analytics. Instead for the reports that you create Zoho Analytics will generate appropriate queries that will connect the required data live from Amazon RDS MySQL to Zoho Analytics and show you the report. In this case the loading time will directly depend on the performance of Amazon RDS MySQL.
+Please note that the Live Connect option is exclusively available for paid plans and trials only. Refer to the Live Connect section to learn. 
+
+Data Import
+Preamble: Why should I allowlist Zoho Analytics IP address and how do I do it?
+How do I import data from the Amazon RDS MySQL database?
+How can I edit the setup?
+How long does it take for the data to be imported into Zoho Analytics?
+Can I import data from Views created in Amazon RDS MySQL (apart from Tables) into Zoho Analytics?
+Will foreign keys defined between my tables in the Amazon RDS MySQL database be linked in Zoho Analytics as well?
+Can I change the data type of the columns in Zoho Analytics?
+I have connected to a database and imported a few tables into Zoho Analytics. Can I add more tables from the same source to the existing connection?
+Can I import data from Amazon RDS MySQL database into an existing table in Zoho Analytics?
+I have synced data from a database into a table. Can I change the data source of this table?
+I have synced data from a database into multiple tables in this workspace? Can I remove the data source for a single table?
+Can I import data from my Amazon RDS MySQL database into an existing Zoho Analytics workspace?
+Can I synchronize the data from my Cloud Database instantly?
+The Last Data Sync Status in Datasources page shows Sync Failed. How do I resolve it?
+How do I remove the Setup?
+Live Connect
+Preamble: Why should I allowlist Zoho Analytics IP address and how do I do it?
+How do I connect live with the Amazon RDS MySQL database?
+How can I edit the live connect setup?
+How is Live Connect different from Data Import?
+How long does it take for me to visualize my data in Zoho Analytics?
+Will the reports/dashboards query hit my database server every time I open it or can it be cached in Zoho Analytics?
+Can I connect Views created in Amazon RDS MySQL (apart from Tables) to Zoho Analytics?
+Will foreign keys defined between my tables in Amazon RDS MySQL database be linked in Zoho Analytics as well?
+Can I link the related tables, connected from the Cloud Database using the Live Connect option, in Zoho Analytics?
+I got an alert message "This view cannot be accessed due to some changes made in the table" while accessing my tables/reports in Zoho Analytics. What should I do?
+What is a Mismatch?
+When do Mismatches occur and how to resolve them?
+Can I synchronize the meta data of the table from my Cloud Database instantly?
+Can I connect the new columns added in my Amazon RDS MySQL database to Zoho Analytics?
+Can I change the data type of the columns in Zoho Analytics?
+Can I import data from other data sources into the same workspace that I have used to connect with Amazon RDS MySQL?
+Can I create Query Tables over the Amazon RDS MySQL data?
+What happens when I delete or rename the database in Amazon RDS MySQL?
+How do I delete a view from a workspace?
+How to restore a deleted view in the workspace?
+How do I remove the Setup?
+What are the limitations of Amazon RDS MySQL Live Connect?
+Troubleshooting Tips
+I get an error message "Sorry, there is a problem in connecting to your cloud data source. Check your connection details and try again." What should I do?
+I get an error message “Cannot connect to the specified endpoint/hostname. Please check if the specified endpoint/hostname is configured as publicly accessible” when trying to connect to Amazon RDS database. What should I do?
+I am unable to find the Live Connect option while importing data into Zoho Analytics. What could be the possible reasons?
+Data Import
+1. Preamble: Why should I allowlist Zoho Analytics IP addresses and How do I do it? 
+
+Note: Click to view the entire list of IP addresses that needs to be allowlisted.
+2. How do I import data from the Amazon RDS MySQL database?
+
+3. How can I edit the setup?
+
+4. How long does it take for the data to be imported into Zoho Analytics? 
+After setup, you might have to wait sometime for the initial fetch to happen. This depends upon the amount of data to be imported into Zoho Analytics and also the response time of your Amazon RDS MySQL server. You will receive an email notification once the import is complete. Please note that, if you access the workspace before the initial fetch, it will not display any data.
+​
+
+5. Can I import data from Views created in Amazon RDS MySQL (apart from Tables) into Zoho Analytics?
+Yes, you can import data from Tables as well as Views available in your Amazon RDS MySQL database into your Zoho Analytics workspace.
+
+6. Will foreign keys defined between my tables in the Amazon RDS MySQL database be linked in Zoho Analytics as well? 
+When importing multiple tables, the foreign keys defined between the tables in Amazon RDS MySQL database will be linked in Zoho Analytics. The foreign keys will be created as Look-up columns in Zoho Analytics. 
+
+If you import data from one table at a time (choosing single table option) then the foreign keys will not be defined. However, you can manually link the tables in Zoho Analytics using the Look-up column feature. Click here to learn about the Look-up column feature.
+
+7. Can I change the data type of the columns imported in Zoho Analytics? 
+Yes, you can change the data type of the columns imported into Zoho Analytics. However it is necessary that the data type of your column is compatible with the data type of the column in your Amazon RDS MySQL database for successful data synchronizations. It is always recommended that you change the data type in both your Amazon RDS MySQL database as well as your Zoho Analytics workspace.
+
+8. I have connected to a database and imported a few tables into Zoho Analytics. Can I add more tables from the same source to the existing connection?
+Yes, you can add tables from the same source to the existing connection. Follow the below steps:
+
+From your Amazon RDS MySQL workspace, navigate to Create > New Table / Import Data.
+Click the Cloud Databases option. The Connect to Cloud Database wizard will open.
+From the Connection name drop down menu, select the existing Amazon RDS MySQL database name.
+
+The rest of the steps are similar to importing data from cloud database.
+Note: In case you change the schedule interval while importing the tables, the same intervals will be applied to already imported tables as well.
+9. Can I import data from Amazon RDS MySQL database into an existing table in Zoho Analytics?
+Yes, you can import data into an existing table if you are importing from the same source database as the imported table. 
+
+From the required table, click Import Data > Import Data into this Table.
+
+The Select Data to Import tab of the Import wizard will open. 
+You can choose to import from the same table or a different table using the Select Table option, or import using the Custom Query.
+ 
+The rest of the steps are similar to importing from a single table.
+10. I have synced data from Amazon RDS MySQL database into a table. Can I change the data source of this table?
+Yes, you can change the data source of a table, into which the Amazon RDS MySQL database has been synced. To do this,
+
+Open the workspace.
+Click the Data Sources tab from the left bar. 
+All the data sources for this workspace will be listed. Click the data source you want to edit.
+The Data Sources page will open. Click the Edit Connection link.
+In the Cloud Database - Edit Connection dialog that opens, modify the data source.
+
+Click Save to implement the changes made.
+11. I have synced data from a database into multiple tables in this workspace? Can I remove the data source for a single table?
+Yes, you can remove the data source for a single table from this data source. Follow the below steps to do this.
+
+Open the workspace.
+Click the Data Sources tab from the left bar. 
+All the data sources for this workspace will be listed. Click the data source you want to edit.
+The Data Sources page will open, listing all the tables synced from the data source. 
+Hover the mouse over the table which you want to remove.  A contextual menu will open. 
+Click Trash icon. Data synchronization will be removed for this table alone. You can choose to synchronize data from other sources, or manually import data into this table as needed. For the rest of the tables, the same data source will continue to be in sync. 
+
+12. Can I import data from my Amazon RDS MySQL database into an existing Zoho Analytics workspace?
+Yes. Follow the below steps to import data into an existing workspace:
+
+Open the workspace into which you wish to import the data.
+Navigate through Create > New Table / Import Data. 
+
+Click the Cloud Databases option.
+
+Configuring the import will be similar to the steps followed in this presentation.
+13. Can I synchronize the data from my Cloud Database instantly?  
+Yes, you can synchronize your data from Cloud Database instantly when needed. 
+
+To synchronize your data instantly:
+
+Open the required workspace.
+From the home page, click the Data Sources tab. 
+In the Data Sources page that opens, click the Sync Now link.
+
+Note: This option can be used to a maximum of five times per day.
+14. The Last Data Sync Status in Datasources page shows Sync Failed. How do I resolve it?
+You can resolve your sync failure by understanding the reason behind the failure. There are two methods to know the reason for the sync failure:
+
+Method 1:
+
+Open the required workspace.
+Click the Data Sources tab from the left bar. 
+All the data sources for this workspace will be listed. Click the data source that has failed to sync.
+​
+The Data Sources page will open. Click the View Last Import Details icon that appears on mouse over of each table row. 
+The Import Details pop-up page will open. You will find the reason for your failure in the Details section. Take the necessary action based on the reason provided.​
+
+Method 2:
+
+Open the corresponding table.
+Navigate through Import Data > Last Import Details.
+The Import Details pop-up page will open. You will find the reason for your failure in the Details section. Take the necessary action based on the reason provided.
+​​​​
+15. How do I remove the Setup?
+To remove the setup,
+
+Open the required workspace.
+Click the Data Sources tab from the left bar.
+All the data sources for this workspace will be listed. Click the Amazon RDS MySQL data source that you want to remove.
+In the Data Sources tab that opens, click the Settings icon inline to the data source name on the right.
+Click the Remove Data Source option from the drop-down menu.
+​
+Please note that the data source connection will be removed, but the tables and the data will be retained in the workspace. As the data source connected is removed, no further synchronization will happen.  
+
+Live Connect
+1. Preamble: Why should I allowlist Zoho Analytics IP addresses and How do I do it? 
+
+Note: Click to view the entire list of IP addresses that needs to be allowlisted.
+2. How do I connect live with the Amazon RDS MySQL database?
+
+3. How can I edit the live connect setup?
+
+ 
+4. How is Live Connect different from Data Import?
+Tabulated below are the differences between the Data Import feature and Live Connect feature.
+
+Data Import	Live Connect
+Data in Amazon RDS MySQL will be imported and stored in Zoho Analytics.	Data from Amazon RDS MySQL will be fetched live using appropriate reporting queries whenever you create or access a report in Zoho Analytics.
+Filtered data set can be imported from Amazon RDS MySQL using customized queries.	Custom Query feature is not available in Amazon RDS MySQL Live Connect. However, you can create Views in the source database and connect the same with Zoho Analytics.
+Multiple data sources (apart from Amazon RDS MySQL) can be imported into the same workspace and they can be combined for reporting & analysis purpose.	Cannot import data from any other data source into the same workspace in which Live Connect from Amazon RDS MySQL is setup.
+Changes made to the columns such as addition/deletion will be synchronized automatically.	Any changes such as column addition/deletion/renaming will not be reflected. You will have to manually map the data using the Sync Design option.
+When importing multiple tables, the foreign keys defined between the tables in the Amazon RDS MySQL database will not be linked in Zoho Analytics. However, you can manually link the tables in Zoho Analytics using the Look-up column feature.	Look-up relationship will be automatically created for tables that are linked via foreign keys in the Amazon RDS MySQL database. You can also manually link the tables in Zoho Analytics using Look-up column feature.
+Users can create query tables.	Users cannot create query tables.
+Report loading time will be fast as the data is stored in Zoho Analytics.	Report loading time directly depends on the Amazon RDS MySQL server response time and the amount of data in Amazon RDS MySQL.
+5. How long does it take for me to visualize my data in Zoho Analytics?
+As there is no data import process involved, the loading time depends upon the amount of data stored in your Amazon RDS MySQL database and also the response time of your Amazon RDS MySQL server.
+
+6. Will the reports/dashboards query hit my database server every time I open it or can it be cached in Zoho Analytics?
+(or) Can I store a cache of my data points in Zoho Analytics to get quick access to my views?
+Zoho Analytics allows you to create a local cache of reports, created over your live connect database. This will increase the speed of loading reports as it will reduce the data fetching time from your live databaseTo enable cache for your live connect workspace, please follow the below steps:
+
+From your Workspace Explorer, click Settings from the side menubar.
+
+In the General - Workspace Settings page that opens, choose Yes for Enable Cachefor this Workspace.
+In Cache Refresh Interval in Minutes, specify the duration to refresh the report .
+Click Save & Close.
+A cache for the reports will be created for the Workspace.
+
+Note:
+Enabling cache will help create a cache for your reports in the workspace. This data will get updated periodically based on the time provided in the Cache Refresh Interval in Minutes. 
+You can create a cache only for the reports, and not for tables in the workspace.
+This option is available only for Live Connect.
+7. Can I connect Views created in Amazon RDS MySQL (apart from Tables) to Zoho Analytics?
+Yes, you can connect with both Views and Tables created in Amazon RDS MySQL to Zoho Analytics.
+
+8. Will foreign keys defined between my tables in Amazon RDS MySQL database be linked in Zoho Analytics as well?
+Yes. In case you have linked two or more tables in your Amazon RDS MySQL database using foreign keys, they will be linked automatically using a Look-up column in Zoho Analytics as well. You can also manually create a lookup relationship among the imported tables in Zoho Analytics.
+
+Note: The lookups created/modified in the added (linked with Zoho Analytics) tables will not be reflected in Zoho Analytics (even with Sync Design option). You need to manually create the lookup in Zoho Analytics. However, the lookup information will be created in Zoho Analytics when new tables are linked.
+9. Can I link the related tables, connected from the Cloud Database using the Live Connect option, in Zoho Analytics?
+Yes, you can link the related tables in Zoho Analytics using the lookup column feature. Learn more.
+
+Note: 
+You will not be able to create Query Tables if you have setup the workspace using the Amazon RDS MySQL Live Connect option as this option does not fetch and store the data locally in Zoho Analytics.
+The Join Tables (lookup column) option will not be available in the Import Wizard. You can create a lookup relation only on the imported tables.
+10. I got an alert message "This view cannot be accessed due to some changes made in the table" while accessing my tables/reports in Zoho Analytics. What should I do?
+This alert message will be displayed when Zoho Analytics is not able to access the information from Amazon RDS MySQL. This could be because the tables/columns that you are trying to access in Zoho Analytics is deleted or renamed in Amazon RDS MySQL.
+
+In this case, it is recommended that you remap the table/column. Refer to this presentation to know how to remap a table.
+
+10. What is a Mismatch?
+When you have created reports in Zoho Analytics over the tables or columns which no longer have a direct mapping in Amazon RDS MySQL database, it will be listed as mismatch. 
+
+So, ensure that the tables/columns in Zoho Analytics workspace and Amazon RDS MySQL database matches. The tables/columns that do not match will be listed in the Mismatch tab of the Amazon RDS ConnectionSettings page. Refer the next question to know more about mismatch.
+
+11. When do Mismatches occur and how to resolve them?
+
+13. Can I synchronize the meta data of the table from my Cloud Database instantly?  
+Yes, you can synchronize the meta data of the table from Cloud Database instantly when needed. 
+
+To synchronize the meta data instantly:
+
+From the workspace explorer, click the Data Sources tab.
+You will get navigated to the Amazon RDS MySQL Connection Settings page. All the tables available in the workspace will be listed.
+Mouse over the required table. The option to sync the table will be displayed inline to the table name.
+Click the Sync link inline to the table name.
+​
+The table meta data from the Cloud Database will get instantly synchronized in Zoho Analytics table. 
+Note: You can also synchronize all the tables available in the workspace with your Amazon RDS MySQL data using the Sync Design button.
+14. Can I connect new columns added in my Amazon RDS MySQL database to Zoho Analytics?
+Yes, you can connect the new columns that are added in your Amazon RDS MySQL database to Zoho Analytics from the Amazon RDS MySQL Connection Settings page. Refer to this presentation to know more.
+
+Note: If there exists a mismatch between the already available data in your Zoho Analytics workspace and your Amazon RDS MySQL database, Zoho Analytics will NOT be able to fetch the new column information. In this case, you need to first resolve the mismatches to connect to the new columns.
+
+15. Can I change the data type of the columns in Zoho Analytics?
+No, you cannot change the data type of the columns in Zoho Analytics.
+
+16. Can I import data from other data sources into the same workspace that I have used to connect with Amazon RDS MySQL?
+No, you cannot import data from other data sources into the same workspace that you have used to connect with Amazon RDS MySQL.
+
+17. Can I create Query Tables over the Amazon RDS MySQL data?
+No, you will not be able to create Query Tables if you have setup the workspace using the Amazon RDS MySQL Live Connect option. This is because this option does not fetch and store the data locally in Zoho Analytics. If you wish to create Query Tables, you can create the required query as a view in the data source and connect the same with Zoho Analytics.
+
+18. What happens when I delete or rename the database in Amazon RDS MySQL?
+When you delete or rename a database in Amazon RDS MySQL, Zoho Analytics loses its connectivity with Amazon RDS MySQL. Thereafter, a warning message, as shown below, would be displayed. This error message will also be displayed if there are any connectivity issues or if your Amazon RDS MySQL credentials have expired.
+
+​
+For more information regarding the same, refer to the Edit Connection presentation.
+
+19. How do I delete a view from a workspace?
+You can easily delete a view from a live connect workspace, by following the below steps:
+
+Click the More Actions icon that appears on mouse-over the view name.
+Click the Delete option from the drop-down menu.
+
+You can also delete multiple views by selecting all the views that you want to delete and clicking the Delete option from the top.
+
+The deleted views will be successfully removed from the workspace and placed in Trash. You can restore the views within 45 days of deletion from the Trash. After the mentioned timeframe, the views will get deleted permanently.
+
+20. How to restore a deleted view in the workspace?
+You can restore a deleted view from the workspace trash. To restore a deleted view, 
+
+Open the trash by clicking the Trash icon on the left menubar of the workspace.
+All the deleted views will be listed here. You can restore the required view by clicking the Restore icon that appears on mouse-over the view.
+
+You can restore multiple views by selecting the required views and clicking the Restore option from the top.
+​
+Note:
+You cannot have two or more of the same tables with the same name in a workspace, hence you cannot restore a table if you have connected to the same table from the source database.
+
+When you have two or more of the same tables in the trash, you can restore only one table. This instance occurs when you import and delete the same table multiple times.
+
+21. How do I remove the Setup?
+You have to delete the workspace in Zoho Analytics to remove the connection setup. 
+
+To delete the workspace,
+
+From your Zoho Analytics account, click the More Actions icon that appears on mouse hover adjacent to the workspace name that you want to delete.
+Click the Delete Workspace option from the drop-down menu.
+
+22. What are the limitations of using the Amazon RDS MySQL Live Connect?
+Given below are a few short comings that one might face while using the Amazon RDS MySQL​ Live Connect option.
+
+Data from your Amazon RDS MySQL database will NOT be locally stored in Zoho Analytics. Zoho Analytics will generate appropriate queries to fetch the required data live from Amazon RDS MySQL and show you the report. Hence, the loading time will directly depend on the performance of Amazon RDS MySQL.
+Any changes such as column addition/deletion/renaming will not be mapped automatically. The user must manually map the updates made.
+Users cannot combine data from other data sources into the same workspace in which you have connected the Amazon RDS MySQL database. 
+Users cannot create query tables.
+Users cannot change the data type of the columns in Zoho Analytics.
+Troubleshooting Tips
+1. I get an error message "Sorry, there is a problem in connecting to your cloud data source. Check your connection details and try again." What should I do?
+This error occurs in the following scenarios:
+
+Scenario	Solution
+Incorrect connection settings are specified	Ensure that the correct Endpoint/Hostname, Port, and user credentials are specified.
+Your cloud database service does not recognise Zoho Analytics as an authenticated agent to fetch the data	To import data from Amazon RDS you need to allowlist Zoho Analytics IP address.
+2. I get an error message “Cannot connect to the specified endpoint/hostname. Please check if the specified endpoint/hostname is configured as publicly accessible” when trying to connect to Amazon RDS database. What should I do?
+This is because you have NOT enabled Public Accessibility while creating the RDS instance. Ensure to enable the public accessibility option in the Amazon RDS interface.
+
+​
+Note: If you don’t want to enable the Public accessibility option, you can connect to the Amazon RDS database using Zoho Databridge.
+3. I am unable to find the Live Connect option while importing data into Zoho Analytics. What could be the possible reasons?
+You will be able to connect live in Zoho Analytics only if,
+
+You have a paid or trial plan.
+You are importing data into a new Workspace in Zoho Analytics.
+Note: Zoho Analytics does not permit the import of data into an existing Workspace using the Live Connect option.
+Did you find what you were looking for? Yes | No
+Visually analyze any data.
+Create your own reports and dashboards in minutes.
+
+ACCESS ZOHO ANALYTICS
+BI & Analytics
+Business Intelligence (BI) Software
+Reporting Software
+Data Visualization Software
+Data Analytics Software
+Embedded Analytics
+What is Business Intelligence?
+What is Embedded Analytics?
+What is Data Analytics?
+What is Data Visualization?
+What is Big Data Analytics?
+Dashboards
+KPI Dashboards
+Business Dashboards
+Executive Dashboards
+Business Solutions
+Sales Analytics
+Marketing Analytics
+Financial Analytics
+Helpdesk Analytics
+Social Media Analytics
+Community
+User Forums
+Blogs
+Press Corner
+Analyst Reports
+Articles
+Newsletter
+Events
+Comparisons
+Tableau
+Microsoft Power BI
+Qlik Sense
+Support
+support@zohoanalytics.com
+Call Toll Free
+Submit Your Request
+Help Center
+FAQ
+Register for Demo
+3-day FREE Assist Program
+Free Virtual Classroom Training
+Webinars
+Video Demos
+Product Tour
+Developers
+Zoho Analytics for ISVs
+Zoho Analytics API
+Zoho Analytics Partner Program
+Mobile BI Apps
+Android / iOS
+Connect with us
+   
+support@zohoanalytics.com
+Search for product overviews, FAQs, and more...
+
+Zoho HomeContact UsSecurity ComplianceIPR ComplaintsAnti-spam PolicyTerms of ServicePrivacy PolicyCookie PolicyGDPR ComplianceAbuse Policy
+a/.-@@--diff --@@- b/.[PATCH]
+
+BEGIN:
+GLOW4:
+</git checkout origin/main
++Run'' 'Runs::/Action::/:Build::/scripts::/Run-on :Runs :
++Runs :gh/pages :
++pages :edit "
++$ intuit install
++Perls" --add-label "production"
++env:
++PR_URL: ${{github.event.pull_request.html_url}}
++GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
++run: gh pr edit "$PR_URL" --add-label "production"
++env:
++PR_URL: ${{github.event.pull_request.html_url}}
++GITHUB_TOKEN: ${{ ((c)(r)).[12753750.[00]m]'_BITORE_34173.1337) ')]}}}'"'' :
+</git checkout zookeeper.yml/pA11y/Main.yml
+jobs/zookeeper/templates/zoo.cfg.erb
+Marking files as viewed can help keep track of your progress, but will not affect your submitted reviewViewed
+<% peers = link('peers') %> <% peers = link('peers') %>
+<% peers.instances.each do |instance| %> <% peers.instances.each do |instance| %>
+server.<%= instance.index+1 %>=<%= (instance.id == spec.id) ? "0.0.0.0" : instance.address %>:<%= peers.p('quorum_port') %>:<%= peers.p('leader_election_port') %> server.<%= instance.index+1 %>=<%= (instance.id == spec.id) ? "0.0.0.0" : instance.address %>:<%= peers.p('quorum_port') %>:<%= peers.p('leader_election_port') %>
+<% end %> <% end %>
+autopurge.purgeInterval=<%= p('autopurge_purge_interval') %> autopurge.purgeInterval=<%= p('autopurge_purge_interval') %>
+autopurge.snapRetainCount=<%= p('autopurge_snap_retain_count') %> autopurge.snapRetainCount=<%= p('autopurge_snap_retain_count') %>
+clientPort=<%= peers.p('client_port') %> clientPort=<%= peers.p('client_port') %>
+clientPortAddress=<%= p('listen_address') %> clientPortAddress=<%= p('listen_address') %>
+cnxTimeout=<%= p('cnx_timeout') %> cnxTimeout=<%= p('cnx_timeout') %>
+dataDir=/var/vcap/store/zookeeper dataDir=/var/vcap/store/zookeeper
+dataLogDir=/var/vcap/sys/log/zookeeper dataLogDir=<%= p('trans_log_dir') %>
+electionAlg=<%= p('election_algorim') %> electionAlg=<%= p('election_algorim') %>
+fsync.warningthresholdms=<%= p('warning_threshold_ms') %> fsync.warningthresholdms=<%= p('warning_threshold_ms') %>
+globalOutstandingLimit=<%= p('global_outstanding_limit') %> globalOutstandingLimit=<%= p('global_outstanding_limit') %>
+initLimit=<%= p('init_limit') %> initLimit=<%= p('init_limit') %>
+leaderServes=<%= p('leader_serves') %> leaderServes=<%= p('leader_serves') %>
+maxClientCnxns=<%= p('max_client_connections') %> maxClientCnxns=<%= p('max_client_connections') %>
+maxSessionTimeout=<%= p('max_session_timeout') %> maxSessionTimeout=<%= p('max_session_timeout') %>
+minSessionTimeout=<%= p('min_session_timeout') %> minSessionTimeout=<%= p('min_session_timeout') %>
+preAllocSize=<%= p('pre_allocation_size') %> preAllocSize=<%= p('pre_allocation_size') %>
+snapCount=<%= p('snap_count') %> snapCount=<%= p('snap_count') %>
+syncEnabled=<%= p('sync_enabled') %> syncEnabled=<%= p('sync_enabled') %>
+syncLimit=<%= p('sync_limit') %> syncLimit=<%= p('sync_limit') %>
+tickTime=<%= p('tick_time') %> tickTime=<%= p('tick_time') %>
+forceSync=<%= p('force_sync') %>index faefd23..c0468b4 100644
+--- a/.github/workflows/Automate.yml
++++ b/.github/workflows/Automate.yml
+@@ -1,23 +1,10 @@
+-Skip to content
++#Jump-or-#?Skip-#To content :
+Search or jump to…
+Pull requests
+-Issues
+-Codespaces
+-Marketplace
+-Explore
+-@mowjoejoejoejoe
+-github
+-/
+-docs
+-Public
+-Fork your own copy of github/docs
+-Code
+-Issues
+-101
+-Pull requests
+-49
+-Discussions
++Issues.tmp :parameters.md :
++@@ -0,0 +1,2 @@
++# WORKSFLOW
+
+AUTOMATE AUTOMATES BEGIN GLOW4 AUTOMATES#Test :tests :tests :Run'@ci:
+Actions
+Projects
+4
+diff --git a/CONTRIBUTINGME.md/contributingme.md b/CONTRIBUTINGME.md/contributingme.md
+deleted file mode 100644
+index a8f5df5..0000000
+--- a/CONTRIBUTINGME.md/contributingme.md
++++ /dev/null
+@@ -1,5 +0,0 @@
+-BITCORE/bitore.sig :
+-E=Request :
+-Pushs :in-to :tavis'@Test.yml'@ci:C:\I/A.P.I :
++'-'' 'AUTOMATE AUTOMATES BEGIN GLOW4 AUTOMATES#Test :tests :tests :Run'@ci:
++GLOW4:'
++BEGIN'
++STARt'
++RUN'
++FROM'
++name :bitore.sig
++Title'' ':'Nan.yml'' :
++-on :ON :
+starts-on :GLOW7 :
+workflows_call-on :dispatch ::':repositories/WORKFLOW.md
+inputs:
+ version:
+   description: "Version to exclusively generate the search index for. E.g. 'dotcom', 'ghes-3.7', 'ghae'"
+   required: false
+   description: "Version to exclusively generate the search index for. E.g. 'dotcom', 'ghcr'@v'"-3.7.9.11.10'"'' :
+   , 'ghrc/cadd.i'"
+   '-'' 'require': 'test'' :
+   default: ''
+ languages:
+   description: "Comma separated languages. E.g. 'en,ja, es' (defaults to all)"
+   required: false
+   default: ''
+schedule:
+cron: '20 */24 * * *' # Run every 24 hours at 20 minutes past the hour
+workflow_run:
+workflows: ['Azure Production - Build and Deploy']
+types:
+ - completed
++permissions:
+
+contents: read
++# This allows a subsequently queued workflow run to cancel previous runs
++concurrency:
+group: '${{ github.workflow }} @ 
+{{ github.event_name }}'
+cancel-in-progress: true
+diff --git a/WORKSFLOW.md b/WORKSFLOW.md
+new file mode 100644
+index 0000000..7a37d1f
+--- /dev/null
++++ b/WORKSFLOW.md
+@@ -0,0 +1,31 @@
++BITCORE/bitore.sig :
++E=Request :Pull Request.md :
++Title'' ':'Nan.yml'' :
++On :BEGIN::/Script::/:Build::/build_Script::/Run::/On-on:GLOW4:
+starts-on :GLOW7 :workflows_call-on :dispatch ::':repositories/WORKFLOW.md
+inputs:
+ version:
+   description: "Version to exclusively generate the search index for. E.g. 'dotcom', 'ghes-3.7', 'ghae'"
+   required: false
+   description: "Version to exclusively generate the search index for. E.g. 'dotcom', 'ghcr'@v'"-3.7.9.11.10'"'' :
+   , 'ghrc/cadd.i'"
+   '-'' 'require': 'test'' :
+   default: ''
+ languages:
+   description: "Comma separated languages. E.g. 'en,ja, es' (defaults to all)"
+   required: false
+   default: ''
+schedule:
+cron: '20 */24 * * *' # Run every 24 hours at 20 minutes past the hour
+workflow_run:
+workflows: ['Azure Production - Build and Deploy']
+types:
+ - completed
++permissions:
+
+contents: read
++# This allows a subsequently queued workflow run to cancel previous runs
++concurrency:
+group: '${{ github.workflow }} @ 
+{{ github.event_name }}'
+cancel-in-progress: true
+:Build::
+access :Private :
+Publish :Copyright (''''('('C')''('R')')''*')'('C')'('R')')' 09-17-2001-operating-activity-detaile'- foward\current. :'W'I'D'E' 'P'r'o'j'e'c't'.''
+All rights reserved.
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions
+are met:
+
+Redistributions of source code must retain the above copyright
+notice, this list of conditions and the following disclaimer.
+Redistributions in binary form must reproduce the above copyright
+notice, this list of conditions and the following disclaimer in the
+documentation and/or other materials provided with the distribution.
+Neither the name of the project nor the names of its contributors
+may be used to endorse or promote products derived from this software
+without specific prior written permission.
+THIS SOFTWARE IS PROVIDED BY THE PROJECT AND CONTRIBUTORS ``AS IS'' AND
+ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+ARE DISCLAIMED. IN NO EVENT SHALL THE PROJECT OR CONTRIBUTORS BE LIABLE
+FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+SUCH DAMAGE.
+
+@mowjoejoejoejoe mowjoejoejoejoe reopened this 3 weeks ago
+@mowjoejoejoejoe
+Owner
+Author
+mowjoejoejoejoe commented 3 weeks ago
+Intuit Logo
+
+Z
+INTUIT ACCOUNT
+Overview
+Sign in & security
+Personal info
+Data privacy
+Products & billing
+Did you find what you’re looking for?
+
+Feedback
+Account activity
+You recently signed into your Intuit Account on these devices.
+
+Linux Computer
+QuickBooks Online
+January 31, 2023 7:19 AM
+Dallas, TX, USA
+Chrome
+Sign in activity
+QuickBooks Online
+January 31, 2023 7:19 AM
+Dallas, TX, USA
+Intuit
+January 31, 2023 5:33 AM
+Dallas, TX, USA
+Intuit
+January 30, 2023 10:52 PM
+Dallas, TX, USA
+
+Show more
+
+Report
+See something that doesn't look right?
+Submit
+PR
+ISSUE_TEMPLATE
+REQUEST
+LAUNCH
+package.json/package.yarn/A.P.I :
+
+@mowjoejoejoejoe mowjoejoejoejoe closed this as completed 3 weeks ago
+mowjoejoejoejoe referenced this issue 3 weeks ago
+@mowjoejoejoejoe
+Rename Pull requests Issues Codespaces Marketplace Explore @mowjoejoe… …
+7fb0c0a
+@mowjoejoejoejoe
+Owner
+Author
+mowjoejoejoejoe commented 2 weeks ago
+diff --git a/.github/workflows/Automate.yml b/.github/workflows/Automate.yml
+index faefd23..c0468b4 100644
+--- a/.github/workflows/Automate.yml
++++ b/.github/workflows/Automate.yml[PATCG .dff@@ -1,23 +1,10 @@
+-Skip to content
++#Jumps-To :ci/C:\I :
+Name _:parameter.md(plugg-inn=-/."{ "%va%" } :AUTOMATE
+UTOMATES BEGIN-on GLOW7 :
+logslog:All'@master/paradice/StarGaszeers/Dawn.myl :
+:Change*ogs=:.plugg-inns--/."imput("{% "var "%} :
+-Skip-#To content :
+Search or jump to…
+Pull requests
+-Issues
+-Codespaces
+-Marketplace
+-Explore
+-@mowjoejoejoejoe
+-github
+-/
+-docs
+-Public
+-Fork your own copy of github/docs
+-Code
+-Issues
+-101
+-Pull requests
+-49
+-Discussions
++Issues.tmp :parameters.md :
++@@ -0,0 +1,2 @@
++# WORKSFLOW
+
+AUTOMATE AUTOMATES BEGIN GLOW4 AUTOMATES#Test :tests :tests :Run'@ci:
+Actions
+Projects
+4
+diff --git a/CONTRIBUTINGME.md/contributingme.md b/CONTRIBUTINGME.md/contributingme.md
+deleted file mode 100644
+index a8f5df5..0000000
+--- a/CONTRIBUTINGME.md/contributingme.md
++++ /dev/null
+@@ -1,5 +0,0 @@
+-BITCORE/bitore.sig :
+-E=Request :
+-Pushs :in-to :tavis'@Test.yml'@tests :
+-#tests'@travis'@bitore'@bitore.sig:
+-ci:
+diff --git a/README.md b/README.md
+new file mode 100644
+index 0000000..21d2f7c
+--- /dev/null
++++ b/README.md
+@@ -0,0 +1,37 @@
+'-'' '#Bitore.sigs/test'@Request.md'@meh.i :
+name :mod.yml L: WORKSFLOW:
++'-'' 'AUTOMATE AUTOMATES BEGIN GLOW4 AUTOMATES#Test :tests :tests :Run'@ci:
++GLOW4:'
++BEGIN'
++STARt'
++RUN'
++FROM'
++name :bitore.sig
++Title'' ':'Nan.yml'' :
++-on :ON :
+starts-on :GLOW7 :
+workflows_call-on :dispatch ::':repositories/WORKFLOW.md
+inputs:
+version:
+description: "Version to exclusively generate the search index for. E.g. 'dotcom', 'ghes-3.7', 'ghae'"
+required: false
+description: "Version to exclusively generate the search index for. E.g. 'dotcom', 'ghcr'@v'"-3.7.9.11.10'"'' :
+, 'ghrc/cadd.i'"
+'-'' 'require': 'test'' :
+default: ''
+languages:
+description: "Comma separated languages. E.g. 'en,ja, es' (defaults to all)"
+required: false
+default: ''
+schedule:
+cron: '20 */24 * * *' # Run every 24 hours at 20 minutes past the hour
+workflow_run:
+workflows: ['Azure Production - Build and Deploy']
+types:
+
+completed
++permissions:
+contents: read
++# This allows a subsequently queued workflow run to cancel previous runs
++concurrency:
+group: '${{ github.workflow }} @
+{{ github.event_name }}'
+cancel-in-progress: true
+diff --git a/WORKSFLOW.md b/WORKSFLOW.md
+new file mode 100644
+index 0000000..7a37d1f
+--- /dev/null
++++ b/WORKSFLOW.md
+@@ -0,0 +1,31 @@
++BITCORE/bitore.sig :
++E=Request :Pull Request.md :
++Title'' ':'Nan.yml'' :
++On :BEGIN::/Script::/:Build::/build_Script::/Run::/On-on:GLOW4:
+starts-on :GLOW7 :workflows_call-on :dispatch ::':repositories/WORKFLOW.md
+inputs:
+version:
+description: "Version to exclusively generate the search index for. E.g. 'dotcom', 'ghes-3.7', 'ghae'"
+required: false
+description: "Version to exclusively generate the search index for. E.g. 'dotcom', 'ghcr'@v'"-3.7.9.11.10'"'' :
+, 'ghrc/cadd.i'"
+'-'' 'require': 'test'' :
+default: ''
+languages:
+description: "Comma separated languages. E.g. 'en,ja, es' (defaults to all)"
+required: false
+default: ''
+schedule:
+cron: '20 */24 * * *' # Run every 24 hours at 20 minutes past the hour
+workflow_run:
+workflows: ['Azure Production - Build and Deploy']
+types:
+
+completed
++permissions:
+contents: read
++# This allows a subsequently queued workflow run to cancel previous runs
++concurrency:
+group: '${{ github.workflow }} @
+{{ github.event_name }}'
+cancel-in-progress: true
+:Build::
+Publish :
+@mowjoejoejoejoe mowjoejoejoejoe reopened this last week
+@mowjoejoejoejoe
+Owner
+Author
+mowjoejoejoejoe commented last week
+Intuit Logo
+
+Z
+INTUIT ACCOUNT
+Overview
+Sign in & security
+Personal info
+Data privacy
+Products & billing
+Did you find what you’re looking for?
+
+Feedback
+Account activity
+You recently signed into your Intuit Account on these devices.
+
+Linux Computer
+QuickBooks Online
+January 31, 2023 7:19 AM
+Dallas, TX, USA
+Chrome
+Sign in activity
+QuickBooks Online
+January 31, 2023 7:19 AM
+Dallas, TX, USA
+Intuit
+January 31, 2023 5:33 AM
+Dallas, TX, USA
+Intuit
+January 30, 2023 10:52 PM
+Dallas, TX, USA
+
+Show more
+
+Report
+See something that doesn't look right?
+Submit
+PR
+ISSUE_TEMPLATE
+REQUEST
+LAUNCH
+package.json/package.yarn/A.P.I :
+
+@mowjoejoejoejoe mowjoejoejoejoe closed this as completed last week
+mowjoejoejoejoe referenced this issue last week
+@mowjoejoejoejoe
+Rename Pull requests Issues Codespaces Marketplace Explore @mowjoejoe… …
+7fb0c0a
+@mowjoejoejoejoe
+
+Add heading textAdd bold text, <Ctrl+b>Add italic text, <Ctrl+i>
+Add a quote, <Ctrl+Shift+.>Add code, <Ctrl+e>Add a link, <Ctrl+k>
+Add a bulleted list, <Ctrl+Shift+8>Add a numbered list, <Ctrl+Shift+7>Add a task list, <Ctrl+Shift+l>
+Directly mention a user or team
+Reference an issue, pull request, or discussion
+Add saved reply
+Leave a comment
+No file chosen
+Attach files by dragging & dropping, selecting or pasting them.
+Styling with Markdown is supported
+Remember, contributions to this repository should follow our GitHub Community Guidelines.
+Assignees
+No one—
+Labels
+None yet
+Projects
+None yet
+Milestone
+No milestone
+Development
+for this issue or link a pull request.
+Notifications
+Customize
+You’re receiving notifications because you’re watching this repository.
+1 participant
+@mowjoejoejoejoe
+
+Delete issue
+Footer
+© 2023 GitHub, Inc.
+Footer navigation
+Terms
+Privacy
+Security
+Status
+Docs
+Contact GitHub
+Pricing
+API
+Training
+Blog
+About
+
+@mowjoejoejoejoe mowjoejoejoejoe reopened this 4 days ago
+@mowjoejoejoejoe
+Owner
+Author
+mowjoejoejoejoe commented 16 hours ago • 
+ci :C:\I :ci :C/D :C:\Users\bin\Bash\ env
+
+@mowjoejoejoejoe mowjoejoejoejoe closed this as completed 16 hours ago
+@mowjoejoejoejoe
+Owner
+Author
+mowjoejoejoejoe commented 16 hours ago
+a/.-@@--diff --@@- b/.[PATCH]
+
+BEGIN:
+GLOW4:
+OpenSky Secured Visa Credit Card – Important Disclosures
+Please take a moment to carefully review the Pricing Information and Terms & Conditions below.
+PRICING INFORMATION
+Interest Rates and Interest Charges
+Annual Percentage Rate (APR)
+for Purchases 21.64%
+This APR will vary with the market based on the Prime Rate.
+APR for Cash Advances 21.64%
+This APR will vary with the market based on the Prime Rate.
+How to Avoid Paying Interest on
+Purchases
+Your due date is at least 25 days after the close of each billing cycle. We will not charge
+you interest on new purchases, provided you have paid your previous balance in full by
+the due date each month. We will begin charging interest on cash advances on the
+transaction date.
+Minimum Interest Charge If you are charged interest, the charge will be no less than $1.00.
+For Credit Card Tips from the
+Consumer Financial Protection
+Bureau
+To learn more about factors to consider when applying for or using a credit card, visit
+the website of the Consumer Financial Protection Bureau at http://www.
+Consumerfinance.gov/learnmore.
+Fees
+Annual Fee $35 annually.
+Transaction Fees
+ Cash Advance $6 or 5% of the amount of each Cash Advance; whichever is greater.
+ Foreign Transaction 3% of each Transaction in U.S. dollars
+Penalty Fees
+ Late Payment Up to $38
+ Returned Payment Up to $25
+How We Will Calculate Your Balance: We use a method called “average daily balance (including new purchases).” See the
+Cardholder Agreement for more details.
+Billing Rights: Information on your rights to dispute transactions and how to exercise those rights is provided in the Cardholder
+Agreement that will be provided to you before you can begin using your new card.
+MILITARY LENDING ACT NOTICE: Federal law provides important protections to members of the Armed Forces and their
+dependents related to extentsion of consumer credit. In general, the cost of consumer credit to a member of the Armed Forces
+andhis or her dependent may not exceed an annual percentage rate of 36 percent. This rate must include, as applicable to the
+credit transaction or account; the costs associated with credit insurance premiums; fees for ancillary products sold in connection
+with the credit transaction; any application fee charged (other than certain application fees for specified credit transactions or
+accounts); and any participation fee charged (other than certain participation fees for a credit card account). To receive this
+information and a description of your payment obligation verbally, please call us toll free 855-763-6736.
+The information described here about the costs of the OpenSky Secured Visa Credit Card issued by Capital Bank, NA is accurate
+as of 01/18/2023. This information may have changed after that date.
+
+STATE NOTICES
+CA RESIDENTS: You may apply for an account in your name alone, regardless of your marital status.
+NY RESIDENTS: You may contact the New York State Banking Department at 1-877-226-5697 to obtain a comparative listing of all credit
+card rates, fees and grace periods.
+OH RESIDENTS: The Ohio rules against discrimination require that all creditors make credit equally available to all creditworthy customers and
+that credit reporting agencies maintain separate credit histories on each individual upon request. The Ohio Civil Rights Commission
+administers compliance with this law.
+VT, RI AND NY RESIDENTS: A credit report may be requested in connection with your application. At your request, Capital Bank (CB) will tell
+you whether or not a credit report was obtained and, if so, the name and address of the consumer reporting agency that furnished the report.
+CB may also request credit reports from time to time in connection with any update, renewal or extension of the credit account, whenever CB
+believes that such action is appropriate.
+Married WI Residents: No provisions of any marital property agreement, unilateral statement under §766.59 of the Wisconsin Statutes, or
+court decree under §766.70 will adversely affect a creditor’s interest unless, prior to the time credit is granted, the creditor is furnished a copy
+of the agreement, statement or decree or has actual knowledge of the adverse provision. If an Account is opened for you, you must notify
+your spouse about the Account before any payment on the Account is due. Your Signature confirms that credit extended under this account
+will be incurred in the interest of your marriage or family.
+TERMS & CONDITIONS AND ADDITIONAL DISCLOSURES
+USA PATRIOT Act Notice: To help the government fight the funding of terrorism and money laundering activities, Federal law requires all
+financial institutions to obtain, verify, and record information that identifies each individual or entity opening an account.
+What this means for you: When you apply for or open an account, we will ask you for your name, street address, date of birth and other
+information that will allow us to identify you. You may be asked to provide your driver’s license or other identifying documents. We are
+required to follow this procedure each time an account is opened, even if you are a current customer of Capital Bank. Thank you for helping
+us to follow this federally mandated procedure.
+I am applying to Capital Bank, N.A. for the OpenSky Secured Credit Card.
+I understand to be eligible for the offer:
+ I must be at least 18 years of age and have a valid Social Security Number or Individual Taxpayer
+Identification Number.
+ I need to be a United States citizen or permanent resident of the United States.
+ My monthly income must be greater than my monthly expenses and I have the ability to repay the
+estimated monthly payment you require for this card.
+ I have not applied for a Capital Bank credit card 4 or more times in the last 60 days.
+ I do not have 2 or more open credit card accounts with Capital Bank.
+ My account history on any current or previous relationship with Capital Bank must be in good standing.
+With respect to my application, I acknowledge that:
+ If I am approved, I will be required to provide a security deposit in the amount equal to the credit line as
+collateral to fund my “Pledged Deposit Account”.
+ Interest will not be paid on my Pledge Deposit Account.
+ My deposit is fully refundable and will be returned after my credit card balance is paid in full.
+ I will need to make monthly payments toward any balance I accrue, as with any other credit card.
+ By providing my phone numbers, I agree that Capital Bank, and its authorized agents, may call me at these
+numbers. If the number is a cell phone number I agree that you may contact me using an automatic
+dialer, including pre-recorded messages and/or text messages.
+ I will receive the OpenSky Cardholder Agreement, which includes the Pledge Deposit Account Agreement,
+and I am bound by its terms and future revisions.
+ Everything that I have stated in this application is correct to the best of my knowledge.
+CONSENT TO ELECTRONIC COMMUNICATIONS:
+Electronic Signatures. By clicking the “Submit” or similar button, you hereby agree to sign up for electronic communications and this will
+constitute your consent and shall constitute your signature.
+Federal Law. You acknowledge and agree that your consent is being provided in connection with a transaction affecting interstate commerce
+that is subject to the federal Electronic Signatures in Global and National Commerce Act, and that you and we both intend that the Act apply
+to the fullest extent possible to validate our ability to conduct business and communicate with you by electronic means.
+
+Categories of Communications. You consent to receive communications relating to your Account in electronic form. The communications
+covered by your consent may include, but are not limited to, (a) initial disclosure statement or agreement governing your Account, (b) any
+disclosure required by federal, state or local law, including disclosures under the federal Truth in Lending Act, the federal Fair Credit Reporting
+Act and the financial privacy provisions of the Gramm-Leach-Bliley Act, (c) your billing statement, (d) letters, notices or alerts regarding our
+Account and any changes to your Account, (e) other disclosures, notices or communications in connection with the application for, the
+opening of, maintenance of or collection of your Account, and (f) Pledged Deposit Account Agreement.
+SECURITY AGREEMENT AND PLEDGED DEPOSIT ACCOUNT DISCLOSURES
+Pledged Deposit Account. As a condition to obtaining this Account, you are opening a Pledged Deposit Account with us as security for the
+repayment of all credit and other obligations incurred on the Account, including fees and interest. Pledged Deposit Account may be referred to
+as “Deposit Account” or “Collateral Account”.
+You give Capital Bank, N.A. security interest in, and assign to us, all current and after-acquired funds, “Deposit Funds”, including interest in your
+Deposit Account held by the Bank. We may also exercise all the rights of an owner of the Deposit Account.
+Default. The Bank may without prior notice, declare the total balance due immediately on your Account and apply all or part of your Deposit
+Account to the payment of that balance if: (a) you fail to make any payment due; (b) exceed your credit limit; (c) default under the terms of your
+Agreement; (d) your Account is closed by you or by us; (e) the Cardholder dies; (f) any government authority takes action the Bank believes will
+adversely affect your ability to pay; or (g) you file a petition for bankruptcy.
+Refunds. Your Deposit Account will be closed once you satisfy in full all your Account obligations under this Agreement. Upon the closure of
+your Deposit Account, Deposit Funds greater than $1.00 will be refunded within eight (8) weeks. If the Bank determines the Deposit Funds shall
+be released, we will either return the funds using an account which the Bank has previously verified, or by some other method The Bank deems
+sufficient.
+Rate Information. The interest rate on your account is 0% with an ANNUAL PERCENTAGE YIELD of 0%.
+Compounding and Crediting. No interest is paid therefore there is no interest compounding and no interest crediting.
+Minimum Balance Requirements. The amount to Open the Pledged Deposit Account is the minimum amount as described above for your
+OpenSky Credit Card Account. There are no minimum balance fees assessed to the Pledged Deposit Account regardless of the balance in the
+account.
+Balance Computation Method. No interest is paid therefore the balance computation method used to determine what interest would be paid is
+not applicable.
+
+©2022 Capital Bank, N.A. Member FDIC. SKY1-056
+All rights reserved. January 2023 > * </git checkout origin/main
+
++Run'' 'Runs::/Action::/:Build::/scripts::/Run-on :Runs :
++Runs :gh/pages :
++pages :edit "
++$ intuit install
++Perls" --add-label "production"
++env:
++PR_URL: ${{github.event.pull_request.html_url}}
++GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
++run: gh pr edit "$PR_URL" --add-label "production"
++env:
++PR_URL: ${{github.event.pull_request.html_url}}
++GITHUB_TOKEN: ${{ ((c)(r)).[12753750.[00]m]'_BITORE_34173.1337) ')]}}}'"'' :
+
+</git checkout zookeeper.yml/pA11y/Main.yml
+jobs/zookeeper/templates/zoo.cfg.erb
+Marking files as viewed can help keep track of your progress, but will not affect your submitted reviewViewed
+<% peers = link('peers') %> <% peers = link('peers') %>
+<% peers.instances.each do |instance| %> <% peers.instances.each do |instance| %>
+server.<%= instance.index+1 %>=<%= (instance.id == spec.id) ? "0.0.0.0" : instance.address %>:<%= peers.p('quorum_port') %>:<%= peers.p('leader_election_port') %> server.<%= instance.index+1 %>=<%= (instance.id == spec.id) ? "0.0.0.0" : instance.address %>:<%= peers.p('quorum_port') %>:<%= peers.p('leader_election_port') %>
+<% end %> <% end %>
+autopurge.purgeInterval=<%= p('autopurge_purge_interval') %> autopurge.purgeInterval=<%= p('autopurge_purge_interval') %>
+autopurge.snapRetainCount=<%= p('autopurge_snap_retain_count') %> autopurge.snapRetainCount=<%= p('autopurge_snap_retain_count') %>
+clientPort=<%= peers.p('client_port') %> clientPort=<%= peers.p('client_port') %>
+clientPortAddress=<%= p('listen_address') %> clientPortAddress=<%= p('listen_address') %>
+cnxTimeout=<%= p('cnx_timeout') %> cnxTimeout=<%= p('cnx_timeout') %>
+dataDir=/var/vcap/store/zookeeper dataDir=/var/vcap/store/zookeeper
+dataLogDir=/var/vcap/sys/log/zookeeper dataLogDir=<%= p('trans_log_dir') %>
+electionAlg=<%= p('election_algorim') %> electionAlg=<%= p('election_algorim') %>
+fsync.warningthresholdms=<%= p('warning_threshold_ms') %> fsync.warningthresholdms=<%= p('warning_threshold_ms') %>
+globalOutstandingLimit=<%= p('global_outstanding_limit') %> globalOutstandingLimit=<%= p('global_outstanding_limit') %>
+initLimit=<%= p('init_limit') %> initLimit=<%= p('init_limit') %>
+leaderServes=<%= p('leader_serves') %> leaderServes=<%= p('leader_serves') %>
+maxClientCnxns=<%= p('max_client_connections') %> maxClientCnxns=<%= p('max_client_connections') %>
+maxSessionTimeout=<%= p('max_session_timeout') %> maxSessionTimeout=<%= p('max_session_timeout') %>
+minSessionTimeout=<%= p('min_session_timeout') %> minSessionTimeout=<%= p('min_session_timeout') %>
+preAllocSize=<%= p('pre_allocation_size') %> preAllocSize=<%= p('pre_allocation_size') %>
+snapCount=<%= p('snap_count') %> snapCount=<%= p('snap_count') %>
+syncEnabled=<%= p('sync_enabled') %> syncEnabled=<%= p('sync_enabled') %>
+syncLimit=<%= p('sync_limit') %> syncLimit=<%= p('sync_limit') %>
+tickTime=<%= p('tick_time') %> tickTime=<%= p('tick_time') %>
+forceSync=<%= p('force_sync') %>index faefd23..c0468b4 100644
+--- a/.github/workflows/Automate.yml
++++ b/.github/workflows/Automate.yml
+@@ -1,23 +1,10 @@
+-Skip to content
++#Jump-or-#?Skip-#To content :
+Search or jump to…
+Pull requests
+-Issues
+-Codespaces
+-Marketplace
+-Explore
+-@mowjoejoejoejoe -github -/ -docs -Public -Fork your own copy of github/docs -Code -Issues -101 -Pull requests -49 -Discussions +Issues.tmp :parameters.md : +@@ -0,0 +1,2 @@ +# WORKSFLOW
+
+AUTOMATE AUTOMATES BEGIN GLOW4 AUTOMATES#Test :tests :tests :Run'@ci:
+Actions
+Projects
+4
+diff --git a/CONTRIBUTINGME.md/contributingme.md b/CONTRIBUTINGME.md/contributingme.md
+deleted file mode 100644
+index a8f5df5..0000000
+--- a/CONTRIBUTINGME.md/contributingme.md
++++ /dev/null
+@@ -1,5 +0,0 @@
+-BITCORE/bitore.sig :
+-E=Request :
+-Pushs :in-to :tavis'@Test.yml'@ci:C:\I/A.P.I :
++'-'' 'AUTOMATE AUTOMATES BEGIN GLOW4 AUTOMATES#Test :tests :tests :Run'@ci:
++GLOW4:'
++BEGIN'
++STARt'
++RUN'
++FROM'
++name :bitore.sig
++Title'' ':'Nan.yml'' :
++-on :ON :
+starts-on :GLOW7 :
+workflows_call-on :dispatch ::':repositories/WORKFLOW.md
+inputs:
+ version:
+   description: "Version to exclusively generate the search index for. E.g. 'dotcom', 'ghes-3.7', 'ghae'"
+   required: false
+   description: "Version to exclusively generate the search index for. E.g. 'dotcom', 'ghcr'@v'"-3.7.9.11.10'"'' :
+   , 'ghrc/cadd.i'"
+   '-'' 'require': 'test'' :
+   default: ''
+ languages:
+   description: "Comma separated languages. E.g. 'en,ja, es' (defaults to all)"
+   required: false
+   default: ''
+schedule:
+cron: '20 */24 * * *' # Run every 24 hours at 20 minutes past the hour
+workflow_run:
+workflows: ['Azure Production - Build and Deploy']
+types:
+ - completed
++permissions:
+
+contents: read
++# This allows a subsequently queued workflow run to cancel previous runs
++concurrency:
+group: '${{ github.workflow }} @ github.headref{{ github.event_name }}'
+cancel-in-progress: true
+diff --git a/WORKSFLOW.md b/WORKSFLOW.md
+new file mode 100644
+index 0000000..7a37d1f
+--- /dev/null
++++ b/WORKSFLOW.md
+@@ -0,0 +1,31 @@
++BITCORE/bitore.sig :
++E=Request :Pull Request.md :
++Title'' ':'Nan.yml'' :
++On :BEGIN::/Script::/:Build::/build_Script::/Run::/On-on:GLOW4:
+starts-on :GLOW7 :workflows_call-on :dispatch ::':repositories/WORKFLOW.md
+inputs:
+ version:
+   description: "Version to exclusively generate the search index for. E.g. 'dotcom', 'ghes-3.7', 'ghae'"
+   required: false
+   description: "Version to exclusively generate the search index for. E.g. 'dotcom', 'ghcr'@v'"-3.7.9.11.10'"'' :
+   , 'ghrc/cadd.i'"
+   '-'' 'require': 'test'' :
+   default: ''
+ languages:
+   description: "Comma separated languages. E.g. 'en,ja, es' (defaults to all)"
+   required: false
+   default: ''
+schedule:
+cron: '20 */24 * * *' # Run every 24 hours at 20 minutes past the hour
+workflow_run:
+workflows: ['Azure Production - Build and Deploy']
+types:
+ - completed
++permissions:
+
+contents: read
++# This allows a subsequently queued workflow run to cancel previous runs
++concurrency:
+group: '${{ github.workflow }} @ github.headref{{ github.event_name }}'
+cancel-in-progress: true
+:Build::
+access :Private :
+Publish :Copyright (''''('('C')''('R')')''*')'('C')'('R')')' 09-17-2001-operating-activity-detaile'- foward\current. :'W'I'D'E' 'P'r'o'j'e'c't'.''
+All rights reserved.
+Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
+
+Redistributions of source code must retain the above copyright
+notice, this list of conditions and the following disclaimer.
+Redistributions in binary form must reproduce the above copyright
+notice, this list of conditions and the following disclaimer in the
+documentation and/or other materials provided with the distribution.
+Neither the name of the project nor the names of its contributors
+may be used to endorse or promote products derived from this software
+without specific prior written permission.
+THIS SOFTWARE IS PROVIDED BY THE PROJECT AND CONTRIBUTORS ``AS IS'' AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE PROJECT OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+OpenSky Secured Visa Credit Card – Important Disclosures
+Please take a moment to carefully review the Pricing Information and Terms & Conditions below.
+PRICING INFORMATION
+Interest Rates and Interest Charges
+Annual Percentage Rate (APR)
+for Purchases 21.64%
+This APR will vary with the market based on the Prime Rate.
+APR for Cash Advances 21.64%
+This APR will vary with the market based on the Prime Rate.
+How to Avoid Paying Interest on
+Purchases
+Your due date is at least 25 days after the close of each billing cycle. We will not charge
+you interest on new purchases, provided you have paid your previous balance in full by
+the due date each month. We will begin charging interest on cash advances on the
+transaction date.
+Minimum Interest Charge If you are charged interest, the charge will be no less than $1.00.
+For Credit Card Tips from the
+Consumer Financial Protection
+Bureau
+To learn more about factors to consider when applying for or using a credit card, visit
+the website of the Consumer Financial Protection Bureau at http://www.
+Consumerfinance.gov/learnmore.
+Fees
+Annual Fee $35 annually.
+Transaction Fees
+ Cash Advance $6 or 5% of the amount of each Cash Advance; whichever is greater.
+ Foreign Transaction 3% of each Transaction in U.S. dollars
+Penalty Fees
+ Late Payment Up to $38
+ Returned Payment Up to $25
+How We Will Calculate Your Balance: We use a method called “average daily balance (including new purchases).” See the
+Cardholder Agreement for more details.
+Billing Rights: Information on your rights to dispute transactions and how to exercise those rights is provided in the Cardholder
+Agreement that will be provided to you before you can begin using your new card.
+MILITARY LENDING ACT NOTICE: Federal law provides important protections to members of the Armed Forces and their
+dependents related to extentsion of consumer credit. In general, the cost of consumer credit to a member of the Armed Forces
+andhis or her dependent may not exceed an annual percentage rate of 36 percent. This rate must include, as applicable to the
+credit transaction or account; the costs associated with credit insurance premiums; fees for ancillary products sold in connection
+with the credit transaction; any application fee charged (other than certain application fees for specified credit transactions or
+accounts); and any participation fee charged (other than certain participation fees for a credit card account). To receive this
+information and a description of your payment obligation verbally, please call us toll free 855-763-6736.
+The information described here about the costs of the OpenSky Secured Visa Credit Card issued by Capital Bank, NA is accurate
+as of 01/18/2023. This information may have changed after that date.
+
+STATE NOTICES
+CA RESIDENTS: You may apply for an account in your name alone, regardless of your marital status.
+NY RESIDENTS: You may contact the New York State Banking Department at 1-877-226-5697 to obtain a comparative listing of all credit
+card rates, fees and grace periods.
+OH RESIDENTS: The Ohio rules against discrimination require that all creditors make credit equally available to all creditworthy customers and
+that credit reporting agencies maintain separate credit histories on each individual upon request. The Ohio Civil Rights Commission
+administers compliance with this law.
+VT, RI AND NY RESIDENTS: A credit report may be requested in connection with your application. At your request, Capital Bank (CB) will tell
+you whether or not a credit report was obtained and, if so, the name and address of the consumer reporting agency that furnished the report.
+CB may also request credit reports from time to time in connection with any update, renewal or extension of the credit account, whenever CB
+believes that such action is appropriate.
+Married WI Residents: No provisions of any marital property agreement, unilateral statement under §766.59 of the Wisconsin Statutes, or
+court decree under §766.70 will adversely affect a creditor’s interest unless, prior to the time credit is granted, the creditor is furnished a copy
+of the agreement, statement or decree or has actual knowledge of the adverse provision. If an Account is opened for you, you must notify
+your spouse about the Account before any payment on the Account is due. Your Signature confirms that credit extended under this account
+will be incurred in the interest of your marriage or family.
+TERMS & CONDITIONS AND ADDITIONAL DISCLOSURES
+USA PATRIOT Act Notice: To help the government fight the funding of terrorism and money laundering activities, Federal law requires all
+financial institutions to obtain, verify, and record information that identifies each individual or entity opening an account.
+What this means for you: When you apply for or open an account, we will ask you for your name, street address, date of birth and other
+information that will allow us to identify you. You may be asked to provide your driver’s license or other identifying documents. We are
+required to follow this procedure each time an account is opened, even if you are a current customer of Capital Bank. Thank you for helping
+us to follow this federally mandated procedure.
+I am applying to Capital Bank, N.A. for the OpenSky Secured Credit Card.
+I understand to be eligible for the offer:
+ I must be at least 18 years of age and have a valid Social Security Number or Individual Taxpayer
+Identification Number.
+ I need to be a United States citizen or permanent resident of the United States.
+ My monthly income must be greater than my monthly expenses and I have the ability to repay the
+estimated monthly payment you require for this card.
+ I have not applied for a Capital Bank credit card 4 or more times in the last 60 days.
+ I do not have 2 or more open credit card accounts with Capital Bank.
+ My account history on any current or previous relationship with Capital Bank must be in good standing.
+With respect to my application, I acknowledge that:
+ If I am approved, I will be required to provide a security deposit in the amount equal to the credit line as
+collateral to fund my “Pledged Deposit Account”.
+ Interest will not be paid on my Pledge Deposit Account.
+ My deposit is fully refundable and will be returned after my credit card balance is paid in full.
+ I will need to make monthly payments toward any balance I accrue, as with any other credit card.
+ By providing my phone numbers, I agree that Capital Bank, and its authorized agents, may call me at these
+numbers. If the number is a cell phone number I agree that you may contact me using an automatic
+dialer, including pre-recorded messages and/or text messages.
+ I will receive the OpenSky Cardholder Agreement, which includes the Pledge Deposit Account Agreement,
+and I am bound by its terms and future revisions.
+ Everything that I have stated in this application is correct to the best of my knowledge.
+CONSENT TO ELECTRONIC COMMUNICATIONS:
+Electronic Signatures. By clicking the “Submit” or similar button, you hereby agree to sign up for electronic communications and this will
+constitute your consent and shall constitute your signature.
+Federal Law. You acknowledge and agree that your consent is being provided in connection with a transaction affecting interstate commerce
+that is subject to the federal Electronic Signatures in Global and National Commerce Act, and that you and we both intend that the Act apply
+to the fullest extent possible to validate our ability to conduct business and communicate with you by electronic means.
+
+Categories of Communications. You consent to receive communications relating to your Account in electronic form. The communications
+covered by your consent may include, but are not limited to, (a) initial disclosure statement or agreement governing your Account, (b) any
+disclosure required by federal, state or local law, including disclosures under the federal Truth in Lending Act, the federal Fair Credit Reporting
+Act and the financial privacy provisions of the Gramm-Leach-Bliley Act, (c) your billing statement, (d) letters, notices or alerts regarding our
+Account and any changes to your Account, (e) other disclosures, notices or communications in connection with the application for, the
+opening of, maintenance of or collection of your Account, and (f) Pledged Deposit Account Agreement.
+SECURITY AGREEMENT AND PLEDGED DEPOSIT ACCOUNT DISCLOSURES
+Pledged Deposit Account. As a condition to obtaining this Account, you are opening a Pledged Deposit Account with us as security for the
+repayment of all credit and other obligations incurred on the Account, including fees and interest. Pledged Deposit Account may be referred to
+as “Deposit Account” or “Collateral Account”.
+You give Capital Bank, N.A. security interest in, and assign to us, all current and after-acquired funds, “Deposit Funds”, including interest in your
+Deposit Account held by the Bank. We may also exercise all the rights of an owner of the Deposit Account.
+Default. The Bank may without prior notice, declare the total balance due immediately on your Account and apply all or part of your Deposit
+Account to the payment of that balance if: (a) you fail to make any payment due; (b) exceed your credit limit; (c) default under the terms of your
+Agreement; (d) your Account is closed by you or by us; (e) the Cardholder dies; (f) any government authority takes action the Bank believes will
+adversely affect your ability to pay; or (g) you file a petition for bankruptcy.
+Refunds. Your Deposit Account will be closed once you satisfy in full all your Account obligations under this Agreement. Upon the closure of
+your Deposit Account, Deposit Funds greater than $1.00 will be refunded within eight (8) weeks. If the Bank determines the Deposit Funds shall
+be released, we will either return the funds using an account which the Bank has previously verified, or by some other method The Bank deems
+sufficient.
+Rate Information. The interest rate on your account is 0% with an ANNUAL PERCENTAGE YIELD of 0%.
+Compounding and Crediting. No interest is paid therefore there is no interest compounding and no interest crediting.
+Minimum Balance Requirements. The amount to Open the Pledged Deposit Account is the minimum amount as described above for your
+OpenSky Credit Card Account. There are no minimum balance fees assessed to the Pledged Deposit Account regardless of the balance in the
+account.
+Balance Computation Method. No interest is paid therefore the balance computation method used to determine what interest would be paid is
+not applicable.
+
+©2022 Capital Bank, N.A. Member FDIC. SKY1-056
+All rights reserved. January 2023
+© 2023, Zoho Corporation Pvt. Ltd. All Rights Reserved.
+
