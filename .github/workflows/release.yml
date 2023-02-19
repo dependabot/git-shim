@@ -23,3 +23,334 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           goos: ${{ matrix.goos }}
           goarch: ${{ matrix.goarch }}
+Skip to content
+Pull requestsIssuesCodespaces
+Marketplace
+Explore
+ 
+ 
+Your account has been flagged.
+Because of that, your profile is hidden from the public. If you believe this is a mistake, contact support to have your account status reviewed.
+electron/electronPublic
+Edit Pins 
+ Watch 2.9k 
+Fork 14.4k
+Fork your own copy of electron/electron
+ Star 106k
+Code
+Issues868
+Pull requests87
+Actions
+Projects9
+Security12
+Insights
+New issue
+[Bug]: setAlwaysOnTop + setVisibleOnAllWorkspaces + visibleOnFullScreen not working unless the window is manually focused by user #36364
+ Open
+3 tasks done
+Nic0S opened this issue on Nov 15, 2022 · 0 comments
+ Open
+3 tasks done
+[Bug]: setAlwaysOnTop + setVisibleOnAllWorkspaces + visibleOnFullScreen not working unless the window is manually focused by user#36364
+Nic0S opened this issue on Nov 15, 2022 · 0 comments
+Comments
+
+Nic0S commented on Nov 15, 2022
+Preflight Checklist
+ I have read the Contributing Guidelines for this project.
+ I agree to follow the Code of Conduct that this project adheres to.
+ I have searched the issue tracker for a bug report that matches the one I want to file, without success.
+Electron Version
+21.2.3, 20.3.5
+What operating system are you using?
+macOS
+Operating System Version
+macos 12.16.1
+What arch are you using?
+arm64 (including Apple Silicon)
+Last Known Working Electron version
+n/a
+Expected Behavior
+Fullscreen some app in macOS (for example I'v been testing with chrome).
+Run the repro gist, which will wait 2.5 seconds and then make the following calls on the window:
+mainWindow.setAlwaysOnTop(true, "modal-panel");
+mainWindow.setVisibleOnAllWorkspaces(true, {
+    visibleOnFullScreen: true,
+});
+
+Once you see the electron icon disappear from your doc (indicating the calls above have been made), switch to a macOS workspace that has a fullscreened window
+Now I expect to see my electron window displayed above the other fullscreened macOS window
+Actual Behavior
+If you follow the above steps, the electron window is not displayed above the fullscreened window. If you manually select the electron window and move it around after calling setAlwaysOnTop and setVisibleOnAllWorkspaces, you get the correct behavior and the electron window will appear above your other fullscreen window
+Testcase Gist URL
+https://gist.github.com/9b3ea630126da8c77fb648a65fb8699d
+Additional Information
+I've tried various combinations of window.show(), window.focus(), window.moveTop() etc after setting the new window properties but it doesn't seem to make a difference.
+
+👍2
+egm0121 and iBobik reacted with thumbs up emoji
+ Nic0S added the bug 🪲 label on Nov 15, 2022
+ mlaurencin added this to 22-x-y on Nov 16, 2022
+ mlaurencin moved this to Unsorted Issues in 22-x-y on Nov 16, 2022
+ VerteDinde moved this from Unsorted Issues to Does Not Block Stable in 22-x-y on Nov 16, 2022
+ mlaurencin added platform/macOS 21-x-y labels on Nov 16, 2022
+ lmiller1990 mentioned this issue on Nov 30, 2022
+[Bug]: Launched app from Electron is not correctly focused #36506
+ Closed
+3 tasks
+ will-stone mentioned this issue on Dec 13, 2022
+Not working with links from Full Screen apps and multiple workspaces/desktops (need to restart app frequently) will-stone/browserosaurus#595
+ Open
+3 tasks
+
+mowjoejoejoejoe commented now
+Preflight Checklist
+ I have read the Contributing Guidelines for this project.
+ I agree to follow the Code of Conduct that this project adheres to.
+ I have searched the issue tracker for a bug report that matches the one I want to file, without success.
+Electron Version
+21.2.3, 20.3.5
+What operating system are you using?
+macOS
+Operating System Version
+macos 12.16.1
+What arch are you using?
+arm64 (including Apple Silicon)
+Last Known Working Electron version
+n/a
+Expected Behavior
+Fullscreen some app in macOS (for example I'v been testing with chrome).
+Run the repro gist, which will wait 2.5 seconds and then make the following calls on the window:
+mainWindow.setAlwaysOnTop(true, "modal-panel");
+mainWindow.setVisibleOnAllWorkspaces(true, {
+    visibleOnFullScreen: true,
+});
+
+Once you see the electron icon disappear from your doc (indicating the calls above have been made), switch to a macOS workspace that has a fullscreened window
+Now I expect to see my electron window displayed above the other fullscreened macOS window
+Actual Behavior
+If you follow the above steps, the electron window is not displayed above the fullscreened window. If you manually select the electron window and move it around after calling setAlwaysOnTop and setVisibleOnAllWorkspaces, you get the correct behavior and the electron window will appear above your other fullscreen window
+Testcase Gist URL
+https://gist.github.com/9b3ea630126da8c77fb648a65fb8699d
+Additional Information
+I've tried various combinations of window.show(), window.focus(), window.moveTop() etc after setting the new window properties but it doesn't seem to make a difference.
+mainWindow.setAlwaysOnTop(true, "modal-panel");
+mainWindow.setVisibleOnAllWorkspaces(true, {
+visibleOnFullScreen: true,
+});
+
+
+Write Preview
+Add heading text
+Add bold text, <Ctrl+b>
+Add italic text, <Ctrl+i>
+Add a quote, <Ctrl+Shift+.>
+Add code, <Ctrl+e>
+Add a link, <Ctrl+k>
+Add a bulleted list, <Ctrl+Shift+8>
+Add a numbered list, <Ctrl+Shift+7>
+Add a task list, <Ctrl+Shift+l>
+Directly mention a user or team
+Reference an issue, pull request, or discussion
+Add saved reply
+Attach files by dragging & dropping, selecting or pasting them.
+Styling with Markdown is supported
+Comment
+Remember, contributions to this repository should follow its contributing guidelines, security policy, and code of conduct.
+Assignees
+No one assigned
+Labels
+21-x-ybug 🪲platform/macOS
+Projects
+Status: Does Not Block Stable
+Milestone
+No milestone
+Development
+No branches or pull requests
+Notifications
+Customize
+Unsubscribe
+You’re receiving notifications because you commented.
+3 participants
+
+Footer
+© 2023 GitHub, Inc.
+Footer navigation
+Terms
+Privacy
+Security
+Status
+Docs
+Contact GitHub
+Pricing
+API
+Training
+Blog
+About
+mowjoejoejoejoe commented Preflight Checklist I have read the Contributing Guidelines for this project. I agree to follow the Code of Conduct that this project adheres to. I have searched the issue tracker for a bug report that matches the one I want to file, without success. Electron Version 21.2.3, 20.3.5 What operating system are you using? macOS Operating System Version macos 12.16.1 What arch are you using? arm64 (including Apple Silicon) Last Known Working Electron version n/a Expected Behavior Fullscreen some app in macOS (for example I'v been testing with chrome). Run the repro gist, which will wait 2.5 seconds and then make the following calls on the window: mainWindow.setAlwaysOnTop(true, "modal-panel"); mainWindow.setVisibleOnAllWorkspaces(true, { visibleOnFullScreen: true, }); Once you see the electron icon disappear from your doc (indicating the calls above have been made), switch to a macOS workspace that has a fullscreened window Now I expect to see my electron window displayed above the other fullscreened macOS window Actual Behavior If you follow the above steps, the electron window is not displayed above the fullscreened window. If you manually select the electron window and move it around after calling setAlwaysOnTop and setVisibleOnAllWorkspaces, you get the correct behavior and the electron window will appear above your other fullscreen window Testcase Gist URL https://gist.github.com/9b3ea630126da8c77fb648a65fb8699d Additional Information I've tried various combinations of window.show(), window.focus(), window.moveTop() etc after setting the new window properties but it doesn't seem to make a difference. mainWindow.setAlwaysOnTop(true, "modal-panel"); mainWindow.setVisibleOnAllWorkspaces(true, { visibleOnFullScreen: true, });
+Skip to content
+Pull requestsIssuesCodespaces
+Marketplace
+Explore
+ 
+ 
+Your account has been flagged.
+Because of that, your profile is hidden from the public. If you believe this is a mistake, contact support to have your account status reviewed.
+electron/electronPublic
+Edit Pins 
+ Watch 2.9k 
+Fork 14.4k
+Fork your own copy of electron/electron
+ Star 106k
+Code
+Issues868
+Pull requests87
+Actions
+Projects9
+Security12
+Insights
+New issue
+[Bug]: setAlwaysOnTop + setVisibleOnAllWorkspaces + visibleOnFullScreen not working unless the window is manually focused by user #36364
+ Open
+3 tasks done
+Nic0S opened this issue on Nov 15, 2022 · 0 comments
+ Open
+3 tasks done
+[Bug]: setAlwaysOnTop + setVisibleOnAllWorkspaces + visibleOnFullScreen not working unless the window is manually focused by user#36364
+Nic0S opened this issue on Nov 15, 2022 · 0 comments
+Comments
+
+Nic0S commented on Nov 15, 2022
+Preflight Checklist
+ I have read the Contributing Guidelines for this project.
+ I agree to follow the Code of Conduct that this project adheres to.
+ I have searched the issue tracker for a bug report that matches the one I want to file, without success.
+Electron Version
+21.2.3, 20.3.5
+What operating system are you using?
+macOS
+Operating System Version
+macos 12.16.1
+What arch are you using?
+arm64 (including Apple Silicon)
+Last Known Working Electron version
+n/a
+Expected Behavior
+Fullscreen some app in macOS (for example I'v been testing with chrome).
+Run the repro gist, which will wait 2.5 seconds and then make the following calls on the window:
+mainWindow.setAlwaysOnTop(true, "modal-panel");
+mainWindow.setVisibleOnAllWorkspaces(true, {
+    visibleOnFullScreen: true,
+});
+
+Once you see the electron icon disappear from your doc (indicating the calls above have been made), switch to a macOS workspace that has a fullscreened window
+Now I expect to see my electron window displayed above the other fullscreened macOS window
+Actual Behavior
+If you follow the above steps, the electron window is not displayed above the fullscreened window. If you manually select the electron window and move it around after calling setAlwaysOnTop and setVisibleOnAllWorkspaces, you get the correct behavior and the electron window will appear above your other fullscreen window
+Testcase Gist URL
+https://gist.github.com/9b3ea630126da8c77fb648a65fb8699d
+Additional Information
+I've tried various combinations of window.show(), window.focus(), window.moveTop() etc after setting the new window properties but it doesn't seem to make a difference.
+
+👍2
+egm0121 and iBobik reacted with thumbs up emoji
+ Nic0S added the bug 🪲 label on Nov 15, 2022
+ mlaurencin added this to 22-x-y on Nov 16, 2022
+ mlaurencin moved this to Unsorted Issues in 22-x-y on Nov 16, 2022
+ VerteDinde moved this from Unsorted Issues to Does Not Block Stable in 22-x-y on Nov 16, 2022
+ mlaurencin added platform/macOS 21-x-y labels on Nov 16, 2022
+ lmiller1990 mentioned this issue on Nov 30, 2022
+[Bug]: Launched app from Electron is not correctly focused #36506
+ Closed
+3 tasks
+ will-stone mentioned this issue on Dec 13, 2022
+Not working with links from Full Screen apps and multiple workspaces/desktops (need to restart app frequently) will-stone/browserosaurus#595
+ Open
+3 tasks
+
+mowjoejoejoejoe commented now
+Preflight Checklist
+ I have read the Contributing Guidelines for this project.
+ I agree to follow the Code of Conduct that this project adheres to.
+ I have searched the issue tracker for a bug report that matches the one I want to file, without success.
+Electron Version
+21.2.3, 20.3.5
+What operating system are you using?
+macOS
+Operating System Version
+macos 12.16.1
+What arch are you using?
+arm64 (including Apple Silicon)
+Last Known Working Electron version
+n/a
+Expected Behavior
+Fullscreen some app in macOS (for example I'v been testing with chrome).
+Run the repro gist, which will wait 2.5 seconds and then make the following calls on the window:
+mainWindow.setAlwaysOnTop(true, "modal-panel");
+mainWindow.setVisibleOnAllWorkspaces(true, {
+    visibleOnFullScreen: true,
+});
+
+Once you see the electron icon disappear from your doc (indicating the calls above have been made), switch to a macOS workspace that has a fullscreened window
+Now I expect to see my electron window displayed above the other fullscreened macOS window
+Actual Behavior
+If you follow the above steps, the electron window is not displayed above the fullscreened window. If you manually select the electron window and move it around after calling setAlwaysOnTop and setVisibleOnAllWorkspaces, you get the correct behavior and the electron window will appear above your other fullscreen window
+Testcase Gist URL
+https://gist.github.com/9b3ea630126da8c77fb648a65fb8699d
+Additional Information
+I've tried various combinations of window.show(), window.focus(), window.moveTop() etc after setting the new window properties but it doesn't seem to make a difference.
+mainWindow.setAlwaysOnTop(true, "modal-panel");
+mainWindow.setVisibleOnAllWorkspaces(true, {
+visibleOnFullScreen: true,
+});
+
+
+Write Preview
+Add heading text
+Add bold text, <Ctrl+b>
+Add italic text, <Ctrl+i>
+Add a quote, <Ctrl+Shift+.>
+Add code, <Ctrl+e>
+Add a link, <Ctrl+k>
+Add a bulleted list, <Ctrl+Shift+8>
+Add a numbered list, <Ctrl+Shift+7>
+Add a task list, <Ctrl+Shift+l>
+Directly mention a user or team
+Reference an issue, pull request, or discussion
+Add saved reply
+Attach files by dragging & dropping, selecting or pasting them.
+Styling with Markdown is supported
+Comment
+Remember, contributions to this repository should follow its contributing guidelines, security policy, and code of conduct.
+Assignees
+No one assigned
+Labels
+21-x-ybug 🪲platform/macOS
+Projects
+Status: Does Not Block Stable
+Milestone
+No milestone
+Development
+No branches or pull requests
+Notifications
+Customize
+Unsubscribe
+You’re receiving notifications because you commented.
+3 participants
+
+Footer
+© 2023 GitHub, Inc.
+Footer navigation
+Terms
+Privacy
+Security
+Status
+Docs
+Contact GitHub
+Pricing
+API
+Training
+Blog
+About
+mowjoejoejoejoe commented Preflight Checklist I have read the Contributing Guidelines for this project. I agree to follow the Code of Conduct that this project adheres to. I have searched the issue tracker for a bug report that matches the one I want to file, without success. Electron Version 21.2.3, 20.3.5 What operating system are you using? macOS Operating System Version macos 12.16.1 What arch are you using? arm64 (including Apple Silicon) Last Known Working Electron version n/a Expected Behavior Fullscreen some app in macOS (for example I'v been testing with chrome). Run the repro gist, which will wait 2.5 seconds and then make the following calls on the window: mainWindow.setAlwaysOnTop(true, "modal-panel"); mainWindow.setVisibleOnAllWorkspaces(true, { visibleOnFullScreen: true, }); Once you see the electron icon disappear from your doc (indicating the calls above have been made), switch to a macOS workspace that has a fullscreened window Now I expect to see my electron window displayed above the other fullscreened macOS window Actual Behavior If you follow the above steps, the electron window is not displayed above the fullscreened window. If you manually select the electron window and move it around after calling setAlwaysOnTop and setVisibleOnAllWorkspaces, you get the correct behavior and the electron window will appear above your other fullscreen window Testcase Gist URL https://gist.github.com/9b3ea630126da8c77fb648a65fb8699d Additional Information I've tried various combinations of window.show(), window.focus(), window.moveTop() etc after setting the new window properties but it doesn't seem to make a difference. mainWindow.setAlwaysOnTop(true, "modal-panel"); mainWindow.setVisibleOnAllWorkspaces(true, { visibleOnFullScreen: true, });
+Now but
