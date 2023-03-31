@@ -96,7 +96,8 @@ func Scrub(argument string) string {
 	u, err := url.ParseRequestURI(argument)
 	if err == nil && u.Host != "" && contains(allowedSchemes, u.Scheme) {
 		u.Scheme = "https"
-		// clear the user if there is no password, since it's common to use git@github.com
+		// Clear the user if there is no password, since the URL is usually ssh://git@github.com.
+		// The username is required to tell the server you're doing Git operations, but not needed for HTTPS.
 		if _, isSet := u.User.Password(); !isSet {
 			u.User = nil
 		}
@@ -113,7 +114,8 @@ func Scrub(argument string) string {
 			// host changed, possible attack
 			return argument
 		}
-		// clear the user if there is no password, since it's common to use git@github.com
+		// Clear the user if there is no password, since the URL is usually git@github.com.
+		// The username is required to tell the server you're doing Git operations, but not needed for HTTPS.
 		if _, isSet := u.User.Password(); !isSet {
 			u.User = nil
 		}
