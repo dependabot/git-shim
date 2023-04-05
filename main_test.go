@@ -49,11 +49,15 @@ func TestScrub(t *testing.T) {
 		},
 		{
 			input:    "git@github.com:dependabot/git-https-shim",
-			expected: "https://git@github.com/dependabot/git-https-shim",
+			expected: "https://github.com/dependabot/git-https-shim",
+		},
+		{
+			input:    "ssh://user:pass@github.com/dependabot/git-https-shim",
+			expected: "https://user:pass@github.com/dependabot/git-https-shim",
 		},
 		{
 			input:    "ssh://git@github.com/dependabot/git-https-shim",
-			expected: "https://git@github.com/dependabot/git-https-shim",
+			expected: "https://github.com/dependabot/git-https-shim",
 		},
 		{
 			input:    "ssh://github.com/dependabot/git-https-shim",
