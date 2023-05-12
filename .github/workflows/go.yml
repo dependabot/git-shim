@@ -23,3 +23,10 @@ jobs:
 
     - name: Test
       run: go test -v ./...
+
+  integration-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Integration test
+        run: docker build -f test/Dockerfile .
