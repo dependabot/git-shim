@@ -20,6 +20,10 @@ func TestIsRewriteAllowed(t *testing.T) {
 			expected: true,
 		},
 		{
+			input:    []string{"ls-remote", ""},
+			expected: true,
+		},
+		{
 			input:    []string{"--work-tree=/work", "clone"},
 			expected: true,
 		},
@@ -50,6 +54,14 @@ func TestScrub(t *testing.T) {
 		{
 			input:    "git@github.com:dependabot/git-https-shim",
 			expected: "https://github.com/dependabot/git-https-shim",
+		},
+		{
+			input:    "git+ssh://git@github.com/dependabot/git-https-shim",
+			expected: "https://github.com/dependabot/git-https-shim",
+		},
+		{
+			input:    "git+ssh://user:pass@github.com/dependabot/git-https-shim",
+			expected: "https://user:pass@github.com/dependabot/git-https-shim",
 		},
 		{
 			input:    "ssh://user:pass@github.com/dependabot/git-https-shim",

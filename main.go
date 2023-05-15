@@ -41,7 +41,7 @@ func main() {
 	}
 }
 
-var allowedCommands = []string{"clone", "fetch"}
+var allowedCommands = []string{"clone", "fetch", "ls-remote"}
 
 // IsRewriteAllowed returns true if it is safe to rewrite arguments. Some commands
 // such as config would break if rewritten, like when using insteadOf.
@@ -89,7 +89,7 @@ func FindGit(envPath string) string {
 }
 
 var scpUrl = regexp.MustCompile(`^(?P<user>\S+?)@(?P<host>[a-zA-Z\d-]+(\.[a-zA-Z\d-]+)+\.?):(?P<path>.*?/.*?)$`)
-var allowedSchemes = []string{"git", "ssh"}
+var allowedSchemes = []string{"git", "ssh", "git+ssh"}
 
 // Scrub rewrites arguments that look like URLs to have the HTTPS protocol.
 func Scrub(argument string) string {
