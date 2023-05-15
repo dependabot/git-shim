@@ -29,4 +29,5 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Integration test
+        # `docker build` _is_ the test, if it fails, the test has failed.
         run: docker build -f test/Dockerfile .
