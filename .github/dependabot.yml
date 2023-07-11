@@ -1,10 +1,22 @@
 version: 2
 updates:
   - package-ecosystem: "github-actions"
-    directory: "/" # Location of package manifests
+    directory: "/"
     schedule:
       interval: "weekly"
+      day: "monday"
+      time: "16:00"
+    groups:
+      all-dependencies:
+         patterns:
+            - "*"
   - package-ecosystem: "gomod"
-    directory: "/main"
+    directory: "/"
     schedule:
       interval: "weekly"
+      day: "monday"
+      time: "16:00"
+    groups:
+      all-dependencies:
+         patterns:
+            - "*"
